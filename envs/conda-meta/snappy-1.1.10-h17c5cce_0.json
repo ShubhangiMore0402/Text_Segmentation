@@ -1,0 +1,119 @@
+{
+  "build": "h17c5cce_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "constrains": [],
+  "depends": [
+    "libcxx >=14.0.6"
+  ],
+  "extracted_package_dir": "/opt/miniconda3/pkgs/snappy-1.1.10-h17c5cce_0",
+  "files": [
+    "include/snappy-c.h",
+    "include/snappy-sinksource.h",
+    "include/snappy-stubs-public.h",
+    "include/snappy.h",
+    "lib/cmake/Snappy/SnappyConfig.cmake",
+    "lib/cmake/Snappy/SnappyConfigVersion.cmake",
+    "lib/cmake/Snappy/SnappyTargets-release.cmake",
+    "lib/cmake/Snappy/SnappyTargets.cmake",
+    "lib/libsnappy.1.1.10.dylib",
+    "lib/libsnappy.1.dylib",
+    "lib/libsnappy.dylib"
+  ],
+  "fn": "snappy-1.1.10-h17c5cce_0.conda",
+  "license": "BSD-3-Clause",
+  "link": {
+    "source": "/opt/miniconda3/pkgs/snappy-1.1.10-h17c5cce_0",
+    "type": 1
+  },
+  "md5": "ac82a611d1a67a598096ebaa857198e3",
+  "name": "snappy",
+  "package_tarball_full_path": "/opt/miniconda3/pkgs/snappy-1.1.10-h17c5cce_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "include/snappy-c.h",
+        "path_type": "hardlink",
+        "sha256": "205e85257ab386f547b024bfec7ab57fcdac95c34874c787c72b50a3d95debf4",
+        "sha256_in_prefix": "205e85257ab386f547b024bfec7ab57fcdac95c34874c787c72b50a3d95debf4",
+        "size_in_bytes": 5414
+      },
+      {
+        "_path": "include/snappy-sinksource.h",
+        "path_type": "hardlink",
+        "sha256": "ba6308f8d64d670fbb068284096e2f4685e3919ed213a6de1a185aa3680203bb",
+        "sha256_in_prefix": "ba6308f8d64d670fbb068284096e2f4685e3919ed213a6de1a185aa3680203bb",
+        "size_in_bytes": 7265
+      },
+      {
+        "_path": "include/snappy-stubs-public.h",
+        "path_type": "hardlink",
+        "sha256": "b799f2fefd91d3ddefe82a11fa21fe6f08029d9155c3870dd90ae3bf64aac770",
+        "sha256_in_prefix": "b799f2fefd91d3ddefe82a11fa21fe6f08029d9155c3870dd90ae3bf64aac770",
+        "size_in_bytes": 2580
+      },
+      {
+        "_path": "include/snappy.h",
+        "path_type": "hardlink",
+        "sha256": "21e2747c646ad8ca0a59828b6cd4e6d7d2eab61dc86d36bc1cb271b5e54422c4",
+        "sha256_in_prefix": "21e2747c646ad8ca0a59828b6cd4e6d7d2eab61dc86d36bc1cb271b5e54422c4",
+        "size_in_bytes": 10656
+      },
+      {
+        "_path": "lib/cmake/Snappy/SnappyConfig.cmake",
+        "path_type": "hardlink",
+        "sha256": "c73d514a6f54da127837673c546cf19de0562dab3d146ac8e3836d8b663f9a92",
+        "sha256_in_prefix": "c73d514a6f54da127837673c546cf19de0562dab3d146ac8e3836d8b663f9a92",
+        "size_in_bytes": 2498
+      },
+      {
+        "_path": "lib/cmake/Snappy/SnappyConfigVersion.cmake",
+        "path_type": "hardlink",
+        "sha256": "6ca13e54ae9b64be94b1fa91867964bc302ad2c4513cc01cec0957b8636d0381",
+        "sha256_in_prefix": "6ca13e54ae9b64be94b1fa91867964bc302ad2c4513cc01cec0957b8636d0381",
+        "size_in_bytes": 2881
+      },
+      {
+        "_path": "lib/cmake/Snappy/SnappyTargets-release.cmake",
+        "path_type": "hardlink",
+        "sha256": "82386ab22b715a23f5b3df56420f5afa2987e65412f4e3db513ae66afbab6c18",
+        "sha256_in_prefix": "82386ab22b715a23f5b3df56420f5afa2987e65412f4e3db513ae66afbab6c18",
+        "size_in_bytes": 868
+      },
+      {
+        "_path": "lib/cmake/Snappy/SnappyTargets.cmake",
+        "path_type": "hardlink",
+        "sha256": "d53eb5685b69058f430b991779f9330ae0287df85d491ad8748824c9936e6fe4",
+        "sha256_in_prefix": "d53eb5685b69058f430b991779f9330ae0287df85d491ad8748824c9936e6fe4",
+        "size_in_bytes": 3898
+      },
+      {
+        "_path": "lib/libsnappy.1.1.10.dylib",
+        "path_type": "hardlink",
+        "sha256": "f31fef2d909bc74e373e7f9771ce4862be7390c380639f750898e388f1bf1cb4",
+        "sha256_in_prefix": "f31fef2d909bc74e373e7f9771ce4862be7390c380639f750898e388f1bf1cb4",
+        "size_in_bytes": 77312
+      },
+      {
+        "_path": "lib/libsnappy.1.dylib",
+        "path_type": "softlink",
+        "sha256": "f31fef2d909bc74e373e7f9771ce4862be7390c380639f750898e388f1bf1cb4",
+        "size_in_bytes": 77312
+      },
+      {
+        "_path": "lib/libsnappy.dylib",
+        "path_type": "softlink",
+        "sha256": "f31fef2d909bc74e373e7f9771ce4862be7390c380639f750898e388f1bf1cb4",
+        "size_in_bytes": 77312
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "dfae03cd2339587871e53b42833657faa4c9e42e3e2c56ee9e32bc60797c7f62",
+  "size": 33879,
+  "subdir": "osx-arm64",
+  "timestamp": 1678534968000,
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/snappy-1.1.10-h17c5cce_0.conda",
+  "version": "1.1.10"
+}

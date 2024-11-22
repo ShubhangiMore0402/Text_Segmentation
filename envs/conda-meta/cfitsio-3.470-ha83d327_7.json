@@ -1,0 +1,161 @@
+{
+  "build": "ha83d327_7",
+  "build_number": 7,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "constrains": [],
+  "depends": [
+    "bzip2 >=1.0.8,<2.0a0",
+    "libcurl >=7.71.1,<9.0a0",
+    "libgfortran 5.*",
+    "libgfortran5 >=11.0.0.dev0",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/opt/miniconda3/pkgs/cfitsio-3.470-ha83d327_7",
+  "files": [
+    "bin/fitscopy",
+    "bin/fpack",
+    "bin/funpack",
+    "bin/imcopy",
+    "bin/smem",
+    "include/drvrsmem.h",
+    "include/fitsio.h",
+    "include/fitsio2.h",
+    "include/longnam.h",
+    "lib/libcfitsio.8.3.47.dylib",
+    "lib/libcfitsio.8.dylib",
+    "lib/libcfitsio.a",
+    "lib/libcfitsio.dylib",
+    "lib/pkgconfig/cfitsio.pc"
+  ],
+  "fn": "cfitsio-3.470-ha83d327_7.tar.bz2",
+  "license": "LicenseRef-fitsio",
+  "link": {
+    "source": "/opt/miniconda3/pkgs/cfitsio-3.470-ha83d327_7",
+    "type": 1
+  },
+  "md5": "80a440f6ed160590dccd95c3b8a1c25f",
+  "name": "cfitsio",
+  "package_tarball_full_path": "/opt/miniconda3/pkgs/cfitsio-3.470-ha83d327_7.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/fitscopy",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/cfitsio_1605060267399/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "fbfbfed6233075112130fe6e6cd538eefcd70094bd8ad6280af56016af2eabf2",
+        "sha256_in_prefix": "076003bc9dfab42cdf7391fa6fc96a602473af6b17e343fee530e63594db7bd6",
+        "size_in_bytes": 67568
+      },
+      {
+        "_path": "bin/fpack",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/cfitsio_1605060267399/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "e077796118a78010366f33b2c1e49232c88bd5e1d6ea83ddb2f5638ab00f318d",
+        "sha256_in_prefix": "2408ffa1004e90d3b53f9aeb00ba3ee359ca3c842ce46f38c4f56c06085856ed",
+        "size_in_bytes": 107296
+      },
+      {
+        "_path": "bin/funpack",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/cfitsio_1605060267399/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "133c1d3912ba3a929bc7c404e5e8acf013995f892713462c6b5daa04b1ad9701",
+        "sha256_in_prefix": "cd82d0cb763136996ac0a1cb0c7f97c2ed6f2180a861fd8377b31129766846e4",
+        "size_in_bytes": 90528
+      },
+      {
+        "_path": "bin/imcopy",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/cfitsio_1605060267399/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "e36f387b7d0884f26a34c43889100e0f9dc92600ca31924ff383c4f19323334d",
+        "sha256_in_prefix": "7af85c7a34f9b25412ed4cb0ae1436725b1bbfee23c36a6871c30c8383e99e55",
+        "size_in_bytes": 68432
+      },
+      {
+        "_path": "bin/smem",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/cfitsio_1605060267399/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "ba88af28dd1c580a6c965c4063d3cb5fa542bd25ab055bbf4906e630447115e0",
+        "sha256_in_prefix": "f5007b9d6fb898d868d988d95534a9c61e9c1540cf001f0c4e3c9c102a60e7cd",
+        "size_in_bytes": 67664
+      },
+      {
+        "_path": "include/drvrsmem.h",
+        "path_type": "hardlink",
+        "sha256": "c7280cfe29e2c2c1a35d6b08a8c39dd802eb824c71917ef905063fae7881bcf2",
+        "sha256_in_prefix": "c7280cfe29e2c2c1a35d6b08a8c39dd802eb824c71917ef905063fae7881bcf2",
+        "size_in_bytes": 6536
+      },
+      {
+        "_path": "include/fitsio.h",
+        "path_type": "hardlink",
+        "sha256": "5d5f88edc38649e878566f5575b113ef4f7857bfeceb2e7632de50a6ea08b805",
+        "sha256_in_prefix": "5d5f88edc38649e878566f5575b113ef4f7857bfeceb2e7632de50a6ea08b805",
+        "size_in_bytes": 119089
+      },
+      {
+        "_path": "include/fitsio2.h",
+        "path_type": "hardlink",
+        "sha256": "5be2969f863572a2e3f75239335231b4960a3c394e386515ff5dc6026b72cf1a",
+        "sha256_in_prefix": "5be2969f863572a2e3f75239335231b4960a3c394e386515ff5dc6026b72cf1a",
+        "size_in_bytes": 62930
+      },
+      {
+        "_path": "include/longnam.h",
+        "path_type": "hardlink",
+        "sha256": "f8c18c44e68a4178f9f8c91e53ba5f101747002aa21221fc36eb13b93d8f3c7b",
+        "sha256_in_prefix": "f8c18c44e68a4178f9f8c91e53ba5f101747002aa21221fc36eb13b93d8f3c7b",
+        "size_in_bytes": 21749
+      },
+      {
+        "_path": "lib/libcfitsio.8.3.47.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/cfitsio_1605060267399/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "228a56b02c1fd59ecffcb642de6089d0c9c8b8e1d152dc922a8618dbb4fb842c",
+        "sha256_in_prefix": "1a02d9bda9b927a20758ded24ab2a760b8fae7551a1c29469d285ae5514e7d08",
+        "size_in_bytes": 1353696
+      },
+      {
+        "_path": "lib/libcfitsio.8.dylib",
+        "path_type": "softlink",
+        "sha256": "228a56b02c1fd59ecffcb642de6089d0c9c8b8e1d152dc922a8618dbb4fb842c",
+        "size_in_bytes": 1353696
+      },
+      {
+        "_path": "lib/libcfitsio.a",
+        "path_type": "hardlink",
+        "sha256": "627348f720ab32c030c24057baa175b7605e6d193d846826406e36bb4d12bd18",
+        "sha256_in_prefix": "627348f720ab32c030c24057baa175b7605e6d193d846826406e36bb4d12bd18",
+        "size_in_bytes": 1908976
+      },
+      {
+        "_path": "lib/libcfitsio.dylib",
+        "path_type": "softlink",
+        "sha256": "228a56b02c1fd59ecffcb642de6089d0c9c8b8e1d152dc922a8618dbb4fb842c",
+        "size_in_bytes": 1353696
+      },
+      {
+        "_path": "lib/pkgconfig/cfitsio.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/cfitsio_1605060267399/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "d523f8a1cc0c340b349ba0527601070d79941b30f6d211cbd46684b2ad6e7afd",
+        "sha256_in_prefix": "3b112b30d355f1ebc40b4265a545a336c7544b2854cf0bdc07e9f468f1b59596",
+        "size_in_bytes": 548
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "0ef723e5e56df4e32ee5a9f97eecba3278aba9f6f963e5d75a4dab4694e4f90f",
+  "size": 1231860,
+  "subdir": "osx-arm64",
+  "timestamp": 1605060705000,
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/cfitsio-3.470-ha83d327_7.tar.bz2",
+  "version": "3.470"
+}

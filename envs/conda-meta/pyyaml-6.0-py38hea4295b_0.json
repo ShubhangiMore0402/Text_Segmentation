@@ -1,0 +1,395 @@
+{
+  "build": "py38hea4295b_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "constrains": [],
+  "depends": [
+    "python >=3.8,<3.9.0a0",
+    "python_abi 3.8.* *_cp38",
+    "yaml >=0.2.5,<0.3.0a0"
+  ],
+  "extracted_package_dir": "/opt/miniconda3/pkgs/pyyaml-6.0-py38hea4295b_0",
+  "files": [
+    "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/PKG-INFO",
+    "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/SOURCES.txt",
+    "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/dependency_links.txt",
+    "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/native_libs.txt",
+    "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/not-zip-safe",
+    "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/top_level.txt",
+    "lib/python3.8/site-packages/_yaml/__init__.py",
+    "lib/python3.8/site-packages/_yaml/__pycache__/__init__.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__init__.py",
+    "lib/python3.8/site-packages/yaml/__pycache__/__init__.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/_yaml.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/composer.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/constructor.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/cyaml.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/dumper.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/emitter.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/error.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/events.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/loader.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/nodes.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/parser.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/reader.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/representer.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/resolver.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/scanner.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/serializer.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/__pycache__/tokens.cpython-38.pyc",
+    "lib/python3.8/site-packages/yaml/_yaml.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/yaml/_yaml.py",
+    "lib/python3.8/site-packages/yaml/composer.py",
+    "lib/python3.8/site-packages/yaml/constructor.py",
+    "lib/python3.8/site-packages/yaml/cyaml.py",
+    "lib/python3.8/site-packages/yaml/dumper.py",
+    "lib/python3.8/site-packages/yaml/emitter.py",
+    "lib/python3.8/site-packages/yaml/error.py",
+    "lib/python3.8/site-packages/yaml/events.py",
+    "lib/python3.8/site-packages/yaml/loader.py",
+    "lib/python3.8/site-packages/yaml/nodes.py",
+    "lib/python3.8/site-packages/yaml/parser.py",
+    "lib/python3.8/site-packages/yaml/reader.py",
+    "lib/python3.8/site-packages/yaml/representer.py",
+    "lib/python3.8/site-packages/yaml/resolver.py",
+    "lib/python3.8/site-packages/yaml/scanner.py",
+    "lib/python3.8/site-packages/yaml/serializer.py",
+    "lib/python3.8/site-packages/yaml/tokens.py"
+  ],
+  "fn": "pyyaml-6.0-py38hea4295b_0.tar.bz2",
+  "license": "MIT",
+  "link": {
+    "source": "/opt/miniconda3/pkgs/pyyaml-6.0-py38hea4295b_0",
+    "type": 1
+  },
+  "md5": "9b1aa5e8892ee7a92b30125b2d802157",
+  "name": "pyyaml",
+  "package_tarball_full_path": "/opt/miniconda3/pkgs/pyyaml-6.0-py38hea4295b_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "4261f1f641a9ff4c9ecd009761a7ede1e105789e96e28c857d8c070cb3f591d8",
+        "sha256_in_prefix": "4261f1f641a9ff4c9ecd009761a7ede1e105789e96e28c857d8c070cb3f591d8",
+        "size_in_bytes": 2006
+      },
+      {
+        "_path": "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "c06531e836b72cfedbe9acb4fe30c205ab773f3445f5e6113901657866021f7c",
+        "sha256_in_prefix": "c06531e836b72cfedbe9acb4fe30c205ab773f3445f5e6113901657866021f7c",
+        "size_in_bytes": 21334
+      },
+      {
+        "_path": "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/native_libs.txt",
+        "path_type": "hardlink",
+        "sha256": "97b6560c13068928cb97f820dfa62b9d05d9553042af55e513de45625e9f7c1a",
+        "sha256_in_prefix": "97b6560c13068928cb97f820dfa62b9d05d9553042af55e513de45625e9f7c1a",
+        "size_in_bytes": 32
+      },
+      {
+        "_path": "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/not-zip-safe",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "lib/python3.8/site-packages/PyYAML-6.0-py3.8-macosx-11.0-arm64.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "ae98f42153138ac02387fd6f1b709c7fdbf98e9090c00cfa703d48554e597614",
+        "sha256_in_prefix": "ae98f42153138ac02387fd6f1b709c7fdbf98e9090c00cfa703d48554e597614",
+        "size_in_bytes": 11
+      },
+      {
+        "_path": "lib/python3.8/site-packages/_yaml/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "d3801eff9a2cc5a8692476b75c165401fe308ba5d7df6811f03e97ea9eb81840",
+        "sha256_in_prefix": "d3801eff9a2cc5a8692476b75c165401fe308ba5d7df6811f03e97ea9eb81840",
+        "size_in_bytes": 1402
+      },
+      {
+        "_path": "lib/python3.8/site-packages/_yaml/__pycache__/__init__.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "7bf726a92945dd87428436d7d7bc22fc3b1bce45da8210834f804e6a5d3aadc8",
+        "sha256_in_prefix": "7bf726a92945dd87428436d7d7bc22fc3b1bce45da8210834f804e6a5d3aadc8",
+        "size_in_bytes": 739
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "3434bb4bc5e003bdbe858e8b4661b35164cfbf31b38d656b5a4f8e180fbbec00",
+        "sha256_in_prefix": "3434bb4bc5e003bdbe858e8b4661b35164cfbf31b38d656b5a4f8e180fbbec00",
+        "size_in_bytes": 12309
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/__init__.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "f0197c349affc35ae3d9771cd6a30b1a249c9e5622c5da351539ef94f5373b19",
+        "sha256_in_prefix": "f0197c349affc35ae3d9771cd6a30b1a249c9e5622c5da351539ef94f5373b19",
+        "size_in_bytes": 11153
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/_yaml.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "c85a441737d8204dd3b591035d710b8c0812ae1cc44bcf9d1cadda2b8c885b11",
+        "sha256_in_prefix": "c85a441737d8204dd3b591035d710b8c0812ae1cc44bcf9d1cadda2b8c885b11",
+        "size_in_bytes": 597
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/composer.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "6ab921aa56e29ebd6f0c425e8a5dd114fbf075b590a8e096b33e98827a2bc11b",
+        "sha256_in_prefix": "6ab921aa56e29ebd6f0c425e8a5dd114fbf075b590a8e096b33e98827a2bc11b",
+        "size_in_bytes": 3603
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/constructor.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "94277747ce27cf791761fa26dccc3eba595f85a3c0df6da2aedb583c87445bc1",
+        "sha256_in_prefix": "94277747ce27cf791761fa26dccc3eba595f85a3c0df6da2aedb583c87445bc1",
+        "size_in_bytes": 20862
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/cyaml.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "79f8b571655b4792264b9592dbed4f654705125a51b744a8646ac0ca5a428341",
+        "sha256_in_prefix": "79f8b571655b4792264b9592dbed4f654705125a51b744a8646ac0ca5a428341",
+        "size_in_bytes": 3451
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/dumper.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "2b0837236ac7588a5c8ed6b501b1ce515ee2ad356792cab66a4ec2140f3f1d1d",
+        "sha256_in_prefix": "2b0837236ac7588a5c8ed6b501b1ce515ee2ad356792cab66a4ec2140f3f1d1d",
+        "size_in_bytes": 1863
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/emitter.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "6398acea905b7f539f5249b3f3723bc3b0353e569608cb3e2ad5dc1cdb322904",
+        "sha256_in_prefix": "6398acea905b7f539f5249b3f3723bc3b0353e569608cb3e2ad5dc1cdb322904",
+        "size_in_bytes": 25393
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/error.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "b4cb407cea105f5ce6537c2662846b94a8dd2b87dd8f443a16bc83b9ca573624",
+        "sha256_in_prefix": "b4cb407cea105f5ce6537c2662846b94a8dd2b87dd8f443a16bc83b9ca573624",
+        "size_in_bytes": 2340
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/events.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "3ef55ef11d69489c4af95f1b4d527be587155222b540023f11df3aa720d16078",
+        "sha256_in_prefix": "3ef55ef11d69489c4af95f1b4d527be587155222b540023f11df3aa720d16078",
+        "size_in_bytes": 4014
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/loader.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "86ee315e680b0a1ab012ef0136e156fb37c4d908210b3e825dbc1ad5383374e0",
+        "sha256_in_prefix": "86ee315e680b0a1ab012ef0136e156fb37c4d908210b3e825dbc1ad5383374e0",
+        "size_in_bytes": 2204
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/nodes.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "789b323624d1c19a942769a40e32688fedce729a6696f2182fb5a748dd2de3b1",
+        "sha256_in_prefix": "789b323624d1c19a942769a40e32688fedce729a6696f2182fb5a748dd2de3b1",
+        "size_in_bytes": 1765
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/parser.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "66ca2471e587d836edddfffdc0aa0b1b4161123ff566afa95f59f7d73cd88b6a",
+        "sha256_in_prefix": "66ca2471e587d836edddfffdc0aa0b1b4161123ff566afa95f59f7d73cd88b6a",
+        "size_in_bytes": 11964
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/reader.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "46061e9571c2db401619edd731174e72137bd169a22e6b90829892248dfc58a4",
+        "sha256_in_prefix": "46061e9571c2db401619edd731174e72137bd169a22e6b90829892248dfc58a4",
+        "size_in_bytes": 4577
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/representer.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "5d879a1dc9d6e0a5092f17c6608da21612e2fb58fa76d0ea8181278d6e32ac5e",
+        "sha256_in_prefix": "5d879a1dc9d6e0a5092f17c6608da21612e2fb58fa76d0ea8181278d6e32ac5e",
+        "size_in_bytes": 10109
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/resolver.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "1840e8b8af3ce2a3a6237e3f76b95cb5b5d98f606d419003bbce32d8bd55fe48",
+        "sha256_in_prefix": "1840e8b8af3ce2a3a6237e3f76b95cb5b5d98f606d419003bbce32d8bd55fe48",
+        "size_in_bytes": 5546
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/scanner.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "f75e5aa644d529cb82193119c6ab7b4d112e9def3c655fe9b590cb4e15831ee5",
+        "sha256_in_prefix": "f75e5aa644d529cb82193119c6ab7b4d112e9def3c655fe9b590cb4e15831ee5",
+        "size_in_bytes": 25311
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/serializer.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "55cb3d9b06a8115bee6ba069bd0bf2fefd0d3df2d93f090391be9d7ebfe5abf1",
+        "sha256_in_prefix": "55cb3d9b06a8115bee6ba069bd0bf2fefd0d3df2d93f090391be9d7ebfe5abf1",
+        "size_in_bytes": 3360
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/__pycache__/tokens.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "ca307359e8ebb31a8295c98a5974879f6cdacaaa66e1b04bec1c33e514aed129",
+        "sha256_in_prefix": "ca307359e8ebb31a8295c98a5974879f6cdacaaa66e1b04bec1c33e514aed129",
+        "size_in_bytes": 4975
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/_yaml.cpython-38-darwin.so",
+        "path_type": "hardlink",
+        "sha256": "b52493b2eba880ac01c121e8ef2735ca1b8680a91133737992ecb288ca319436",
+        "sha256_in_prefix": "b52493b2eba880ac01c121e8ef2735ca1b8680a91133737992ecb288ca319436",
+        "size_in_bytes": 281380
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/_yaml.py",
+        "path_type": "hardlink",
+        "sha256": "ac2f88407fcdbccb5a768f8adc3fc3f3dc0d14911e6c06e20bee18bc4803ef4b",
+        "sha256_in_prefix": "ac2f88407fcdbccb5a768f8adc3fc3f3dc0d14911e6c06e20bee18bc4803ef4b",
+        "size_in_bytes": 420
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/composer.py",
+        "path_type": "hardlink",
+        "sha256": "fcaa37d16afa783594794a5ab94193dcb720f503c19ce3d59539c8311189f453",
+        "sha256_in_prefix": "fcaa37d16afa783594794a5ab94193dcb720f503c19ce3d59539c8311189f453",
+        "size_in_bytes": 4883
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/constructor.py",
+        "path_type": "hardlink",
+        "sha256": "90d8247da78b524c10618fd0e857f54f3d97570fe91b5c5513d024ef3faf88b0",
+        "sha256_in_prefix": "90d8247da78b524c10618fd0e857f54f3d97570fe91b5c5513d024ef3faf88b0",
+        "size_in_bytes": 28639
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/cyaml.py",
+        "path_type": "hardlink",
+        "sha256": "e99ac01bd7c062f7557b614aff0d21997a06ed962ca185306a91bc0a20bbd87d",
+        "sha256_in_prefix": "e99ac01bd7c062f7557b614aff0d21997a06ed962ca185306a91bc0a20bbd87d",
+        "size_in_bytes": 3851
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/dumper.py",
+        "path_type": "hardlink",
+        "sha256": "3cb72d66563064ba7b5e679477046ebf89d8399d940670c8532f3e94a7cb17ea",
+        "sha256_in_prefix": "3cb72d66563064ba7b5e679477046ebf89d8399d940670c8532f3e94a7cb17ea",
+        "size_in_bytes": 2837
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/emitter.py",
+        "path_type": "hardlink",
+        "sha256": "8e086d694ede170837d5b1b407b45979aff6f40762f422a65eafd08e04290a44",
+        "sha256_in_prefix": "8e086d694ede170837d5b1b407b45979aff6f40762f422a65eafd08e04290a44",
+        "size_in_bytes": 43006
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/error.py",
+        "path_type": "hardlink",
+        "sha256": "021f73fada072546c4f63f8cf18a7181244ce4280b09cc15cc980b2d1176171a",
+        "sha256_in_prefix": "021f73fada072546c4f63f8cf18a7181244ce4280b09cc15cc980b2d1176171a",
+        "size_in_bytes": 2533
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/events.py",
+        "path_type": "hardlink",
+        "sha256": "e74fd392c810884e2ea7e94aa3f57e9c1cbeb402319083d0c58e6a0e1282787c",
+        "sha256_in_prefix": "e74fd392c810884e2ea7e94aa3f57e9c1cbeb402319083d0c58e6a0e1282787c",
+        "size_in_bytes": 2445
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/loader.py",
+        "path_type": "hardlink",
+        "sha256": "5156becc8aa6905482218abf3e04869b835226db4763645fff3438fdbd5f1cdd",
+        "sha256_in_prefix": "5156becc8aa6905482218abf3e04869b835226db4763645fff3438fdbd5f1cdd",
+        "size_in_bytes": 2061
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/nodes.py",
+        "path_type": "hardlink",
+        "sha256": "80f28d8fca4a09d87677882bde021820d9cf39a3b11a12405226211919cf13ce",
+        "sha256_in_prefix": "80f28d8fca4a09d87677882bde021820d9cf39a3b11a12405226211919cf13ce",
+        "size_in_bytes": 1440
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/parser.py",
+        "path_type": "hardlink",
+        "sha256": "8a55a9e6fbe0a07146cef3990c8b45a068c3e83e369e1959ad9ca30306b4a09a",
+        "sha256_in_prefix": "8a55a9e6fbe0a07146cef3990c8b45a068c3e83e369e1959ad9ca30306b4a09a",
+        "size_in_bytes": 25495
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/reader.py",
+        "path_type": "hardlink",
+        "sha256": "d1d9b38ab3a20c6e17a38d519ee412ecaf6b918df18c78956ac7c330d4ea08dc",
+        "sha256_in_prefix": "d1d9b38ab3a20c6e17a38d519ee412ecaf6b918df18c78956ac7c330d4ea08dc",
+        "size_in_bytes": 6794
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/representer.py",
+        "path_type": "hardlink",
+        "sha256": "22e58ff9c016f6c1ca1274b4802a926bcf78935060e1c813c5a0f021c6d143e6",
+        "sha256_in_prefix": "22e58ff9c016f6c1ca1274b4802a926bcf78935060e1c813c5a0f021c6d143e6",
+        "size_in_bytes": 14190
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/resolver.py",
+        "path_type": "hardlink",
+        "sha256": "f4bf9561f9b89961f1503d558385fbae30d12bfed565de9bf76c33abb63620a6",
+        "sha256_in_prefix": "f4bf9561f9b89961f1503d558385fbae30d12bfed565de9bf76c33abb63620a6",
+        "size_in_bytes": 9004
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/scanner.py",
+        "path_type": "hardlink",
+        "sha256": "60433788b652690c17710460da5d91e0c753d3318fd85f5e1e42862a71f25906",
+        "sha256_in_prefix": "60433788b652690c17710460da5d91e0c753d3318fd85f5e1e42862a71f25906",
+        "size_in_bytes": 51279
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/serializer.py",
+        "path_type": "hardlink",
+        "sha256": "0a1b85826854d35863e31808f0668abfabdf33606e8f06bd8bb7761401e3edc0",
+        "sha256_in_prefix": "0a1b85826854d35863e31808f0668abfabdf33606e8f06bd8bb7761401e3edc0",
+        "size_in_bytes": 4165
+      },
+      {
+        "_path": "lib/python3.8/site-packages/yaml/tokens.py",
+        "path_type": "hardlink",
+        "sha256": "953408cd2570f0c83dc2fe39f7e4e388e41eeb05738aa69196a5f6ffcf6ba79e",
+        "sha256_in_prefix": "953408cd2570f0c83dc2fe39f7e4e388e41eeb05738aa69196a5f6ffcf6ba79e",
+        "size_in_bytes": 2573
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "b30511cb6c389e56201fcd2011590f69a1c4a7788aaa57b061ec031b8172dbc8",
+  "size": 175964,
+  "subdir": "osx-arm64",
+  "timestamp": 1634401842000,
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/pyyaml-6.0-py38hea4295b_0.tar.bz2",
+  "version": "6.0"
+}

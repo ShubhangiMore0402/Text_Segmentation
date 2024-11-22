@@ -1,0 +1,860 @@
+{
+  "build": "py38h93c653a_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "constrains": [],
+  "depends": [
+    "blosc >=1.21.0,<2.0a0",
+    "brotli >=1.0.9,<2.0a0",
+    "brunsli >=0.1,<1.0a0",
+    "bzip2 >=1.0.8,<2.0a0",
+    "cfitsio >=3.470,<3.471.0a0",
+    "charls >=2.2.0,<2.3.0a0",
+    "giflib >=5.2.1,<5.3.0a0",
+    "jpeg >=9d,<10a",
+    "jxrlib >=1.1,<1.2.0a0",
+    "lcms2 >=2.12,<3.0a0",
+    "lerc >=2.2.1,<3.0a0",
+    "libaec >=1.0.5,<2.0a0",
+    "libcxx >=11.1.0",
+    "libdeflate >=1.7,<1.8.0a0",
+    "libpng >=1.6.37,<1.7.0a0",
+    "libtiff >=4.3.0,<4.5.0a0",
+    "libwebp-base >=1.2.0,<2.0a0",
+    "libzopfli >=1.0.3,<1.1.0a0",
+    "lz4-c >=1.9.3,<1.9.4.0a0",
+    "numpy >=1.19.5,<2.0a0",
+    "openjpeg >=2.4.0,<3.0.0a0",
+    "python >=3.8,<3.9.0a0",
+    "python_abi 3.8.* *_cp38",
+    "snappy >=1.1.8,<1.2.0a0",
+    "xz >=5.2.5,<6.0.0a0",
+    "zfp >=0.5.5,<1.0a0",
+    "zlib >=1.2.11,<1.3.0a0",
+    "zstd >=1.5.0,<1.6.0a0"
+  ],
+  "extracted_package_dir": "/opt/miniconda3/pkgs/imagecodecs-2021.6.8-py38h93c653a_0",
+  "files": [
+    "bin/imagecodecs",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/INSTALLER",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/LICENSE",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/METADATA",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/RECORD",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/REQUESTED",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/WHEEL",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/direct_url.json",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/entry_points.txt",
+    "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/top_level.txt",
+    "lib/python3.8/site-packages/imagecodecs/__init__.py",
+    "lib/python3.8/site-packages/imagecodecs/__main__.py",
+    "lib/python3.8/site-packages/imagecodecs/__pycache__/__init__.cpython-38.pyc",
+    "lib/python3.8/site-packages/imagecodecs/__pycache__/__main__.cpython-38.pyc",
+    "lib/python3.8/site-packages/imagecodecs/__pycache__/_imagecodecs.cpython-38.pyc",
+    "lib/python3.8/site-packages/imagecodecs/__pycache__/imagecodecs.cpython-38.pyc",
+    "lib/python3.8/site-packages/imagecodecs/__pycache__/numcodecs.cpython-38.pyc",
+    "lib/python3.8/site-packages/imagecodecs/_aec.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_bitshuffle.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_blosc.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_brotli.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_brunsli.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_bz2.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_deflate.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_gif.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_imagecodecs.py",
+    "lib/python3.8/site-packages/imagecodecs/_imcd.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_jpeg2k.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_jpeg8.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_jpegls.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_jpegsof3.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_jpegxr.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_lerc.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_ljpeg.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_lz4.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_lz4f.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_lzf.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_lzma.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_pglz.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_png.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_rcomp.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_shared.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_snappy.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_tiff.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_webp.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_zfp.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_zlib.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_zopfli.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/_zstd.cpython-38-darwin.so",
+    "lib/python3.8/site-packages/imagecodecs/imagecodecs.py",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-aom",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-bitshuffle",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-blosc",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-brotli",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-brunsli",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-bzip2",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-cfitsio",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-charls",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-dav1d",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-fastlz",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-giflib",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-highway",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-jpeg",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-jpeg-xl",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-jpg_0xc3",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-jxrlib",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-lcms2",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-lerc",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libaec",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libaivf",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libdeflate",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libjpeg",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libjpeg-turbo",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-liblj92",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-liblzma",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libmng",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libpng",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libtiff",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libwebp",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-lz4",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-lzf",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-openjpeg",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-postgresql",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-rav1e",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-snappy",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zfp",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zlib",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zlib-ng",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zopfli",
+    "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zstd",
+    "lib/python3.8/site-packages/imagecodecs/licenses/PATENTS-rav1e",
+    "lib/python3.8/site-packages/imagecodecs/numcodecs.py"
+  ],
+  "fn": "imagecodecs-2021.6.8-py38h93c653a_0.tar.bz2",
+  "license": "BSD-3-Clause",
+  "link": {
+    "source": "/opt/miniconda3/pkgs/imagecodecs-2021.6.8-py38h93c653a_0",
+    "type": 1
+  },
+  "md5": "b35aa2ae06431ae5b89caa628f53a109",
+  "name": "imagecodecs",
+  "package_tarball_full_path": "/opt/miniconda3/pkgs/imagecodecs-2021.6.8-py38h93c653a_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/imagecodecs",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "3eed4b9fca0f930da2c82f32c3e2878388588289108748078319b2128b904825",
+        "sha256_in_prefix": "e47afe8ed4050697b724e293802f27dd4b4d51909aac4b276188186cdef5aad7",
+        "size_in_bytes": 469
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "32920c54a77c053480d4f042dec5cee98dc78ba0c168b448a2df1d1abf213b6b",
+        "sha256_in_prefix": "32920c54a77c053480d4f042dec5cee98dc78ba0c168b448a2df1d1abf213b6b",
+        "size_in_bytes": 1559
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "1554ef554acb6064169334bb7709f41f4d028df8510c59c9c49f9a64150670c6",
+        "sha256_in_prefix": "1554ef554acb6064169334bb7709f41f4d028df8510c59c9c49f9a64150670c6",
+        "size_in_bytes": 14123
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "ee3fc9b20221f75ad1181462ce226f3cf2cb693bc3dba19be491bc837e8f1e90",
+        "sha256_in_prefix": "ee3fc9b20221f75ad1181462ce226f3cf2cb693bc3dba19be491bc837e8f1e90",
+        "size_in_bytes": 8470
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "44b909e30f6b14d57d2a71ce2854f86984c4cb93d0caba9fbea178d70324d8a9",
+        "sha256_in_prefix": "44b909e30f6b14d57d2a71ce2854f86984c4cb93d0caba9fbea178d70324d8a9",
+        "size_in_bytes": 108
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "7142cee28cec7cc7fb4c132ebb9164db4c0085970cc3fd595a19f90c44670e70",
+        "sha256_in_prefix": "7142cee28cec7cc7fb4c132ebb9164db4c0085970cc3fd595a19f90c44670e70",
+        "size_in_bytes": 99
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "47ed21718570e8a5909f76e16727960b5824a64300b80672e69fc89d2a11ae84",
+        "sha256_in_prefix": "47ed21718570e8a5909f76e16727960b5824a64300b80672e69fc89d2a11ae84",
+        "size_in_bytes": 59
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs-2021.6.8.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "e3a00e362f7306e4a41425c5ae9839836172705839fd0e05b9f94c55dcfd872d",
+        "sha256_in_prefix": "e3a00e362f7306e4a41425c5ae9839836172705839fd0e05b9f94c55dcfd872d",
+        "size_in_bytes": 12
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "ac560076223340ffb8c7687fb0bc63084322b0383477de4f71ee167de05544af",
+        "sha256_in_prefix": "ac560076223340ffb8c7687fb0bc63084322b0383477de4f71ee167de05544af",
+        "size_in_bytes": 199
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "4d20c5f2bec8158059cf148bf415a4d514ce3f6b40d73875fbdf3d9c2cf48d2d",
+        "sha256_in_prefix": "4d20c5f2bec8158059cf148bf415a4d514ce3f6b40d73875fbdf3d9c2cf48d2d",
+        "size_in_bytes": 1442
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/__pycache__/__init__.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "f5dde62a11f11537c121eaa5d396a0a5e7567165cb054d50edb2e40b1baca1f4",
+        "sha256_in_prefix": "f5dde62a11f11537c121eaa5d396a0a5e7567165cb054d50edb2e40b1baca1f4",
+        "size_in_bytes": 320
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/__pycache__/__main__.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "b48133b8732a645d0e11647e5fecfcd0354916dde9a73dd609ad35b066d2df94",
+        "sha256_in_prefix": "b48133b8732a645d0e11647e5fecfcd0354916dde9a73dd609ad35b066d2df94",
+        "size_in_bytes": 1280
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/__pycache__/_imagecodecs.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "00f63a4c4404c6963ee688f6b9302947cfef5f3d836c2d1c3f3adbc2256c70d8",
+        "sha256_in_prefix": "00f63a4c4404c6963ee688f6b9302947cfef5f3d836c2d1c3f3adbc2256c70d8",
+        "size_in_bytes": 22027
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/__pycache__/imagecodecs.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "02982d2e4100662291dd2ad2aaf70275fb6a450bed95eef3319647b48b05ddba",
+        "sha256_in_prefix": "02982d2e4100662291dd2ad2aaf70275fb6a450bed95eef3319647b48b05ddba",
+        "size_in_bytes": 26991
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/__pycache__/numcodecs.cpython-38.pyc",
+        "path_type": "hardlink",
+        "sha256": "0cbe60d985c9599f8376814bba6762d4d749998391c395d07305ee0f15bfde2c",
+        "sha256_in_prefix": "0cbe60d985c9599f8376814bba6762d4d749998391c395d07305ee0f15bfde2c",
+        "size_in_bytes": 27321
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_aec.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "e6d6ca45926de54b0465b90f57b851902e57400366e624ce58c21aae6c34c65c",
+        "sha256_in_prefix": "a73f796d3d1e711c40e24371c9e701575f96d57d735c4bb8e6b9acceeb10a03e",
+        "size_in_bytes": 222768
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_bitshuffle.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "7dc825d90135be76ddf1cc49dc40ce78b8cc12d5572adb9c3ae36de3e86cbc92",
+        "sha256_in_prefix": "efda549d63979d9153b6d62eac31bb41b9c287859bf87a6909e0744186ecbba8",
+        "size_in_bytes": 225152
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_blosc.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "8d7d3f3ce96c83e472272308a3f6c9263162f1eecd93821e2901ea7923a3b85f",
+        "sha256_in_prefix": "e3e8605d6024eefc9b0d28032f10556a58978704aafd9c606d117794fa5b7aac",
+        "size_in_bytes": 202016
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_brotli.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "108bab3314c57ba19a6e32fbc4bf7a6acce3dfdbe635f856d1112ff491a56bcc",
+        "sha256_in_prefix": "29a4ca49b9dc7382b4080c5be9e27cc8d40c24b378a950a0442af00751d10f3b",
+        "size_in_bytes": 204656
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_brunsli.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "d4246e52f82e9327c570a2504e972ab834cc776a70e3618691e2ddd9efba9806",
+        "sha256_in_prefix": "86ee982f0fade1dbe1b5755b351c84f165edc396474cd20007fa503cba42c614",
+        "size_in_bytes": 205488
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_bz2.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "cdb79ed5c3a378c5697519e56c3004606a5e1b96169fa51f341d3ddfd26d05f0",
+        "sha256_in_prefix": "654548db2c5662361bf28d23d3438855d16298674e4d5fc6fbe4823c2ee0bea8",
+        "size_in_bytes": 205456
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_deflate.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "2c069d341d7617aa230c3eaba931cbfd2f55e53e3359887fb0d2061926939f96",
+        "sha256_in_prefix": "15a6f412b61b6154b63889c871d487b203b28745ac2bc6180ca3aabc9de8bad0",
+        "size_in_bytes": 228352
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_gif.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "b09b3d621cbb1e156a6c0a16b6cfefc5582057f80381b18a8e55b8876ae7f172",
+        "sha256_in_prefix": "6ba9148d4eabe74741249c256940b641a219dbf91e8b92bb0901a8dc897ef5d7",
+        "size_in_bytes": 226224
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_imagecodecs.py",
+        "path_type": "hardlink",
+        "sha256": "deece26e152f42810259075006a4b57ff226ed0b067b17c8d8e46e90d052cc17",
+        "sha256_in_prefix": "deece26e152f42810259075006a4b57ff226ed0b067b17c8d8e46e90d052cc17",
+        "size_in_bytes": 26654
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_imcd.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "1dbc1702ebf2d76595e1c7bf5c423e88da659ac8bd797cf65cb207dc7f794726",
+        "sha256_in_prefix": "0c37bbe440fa1f328918a5d28e767640016ad5ea9eb55f0dfdd923431db686d0",
+        "size_in_bytes": 379536
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_jpeg2k.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "8449e7edc63f80a987d8739a7c999b03504ed92996abbc78916cc640f0fd2a9e",
+        "sha256_in_prefix": "185272c0d698969dc6c1c4e96c80c3f1a6fc0cd70a1744f3a0d8fd1f226af50e",
+        "size_in_bytes": 268208
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_jpeg8.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "e43510adea508c8e9fd079e02707d017568648d723dc3cde42a05d74e6521314",
+        "sha256_in_prefix": "5934cab5dade5af5c88afa161bbb477246d604ae2899e2267004b9e5f65f5111",
+        "size_in_bytes": 225744
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_jpegls.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "c5e4dc4292fd1ac51f86a3005cac074dc1674eb6acf6f58f73e0c4af2de7f27d",
+        "sha256_in_prefix": "c45738d50589b0f692a31807e9b0cc68f8db705ff04a67029cf58fa44c58bef9",
+        "size_in_bytes": 245024
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_jpegsof3.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "fc5de6aafc222eba5d1aafe6c52d05da91174976aeb3a0b43996f091a5a4b204",
+        "sha256_in_prefix": "a64c2c80300e48fe546fbbee0e02013ee31677a6a28501280a51149f7b6c8be2",
+        "size_in_bytes": 204912
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_jpegxr.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "7885f7eef679a2cb4a3fe382670fdbe69afa6a43bec4ed88aa0c4837da1afd26",
+        "sha256_in_prefix": "6420712b11807d940904abd60dba1d4495db0164e5d51a266124163a0eee50df",
+        "size_in_bytes": 272384
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_lerc.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "b1a946408074c4746582cab2ccea541315a44461dae5a3b54d4e20fa4c67e7ae",
+        "sha256_in_prefix": "9283f735ca17c2eae0dbb0f82fedd961ab7271acc89d5a7300dfbe429847b586",
+        "size_in_bytes": 226704
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_ljpeg.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "161250110c7b3107f0b8b47388d0ba4c9696f9f5c41e4c417969fcd3c2de7539",
+        "sha256_in_prefix": "309d3162761cc716fc8faf82c1223b13a437d8356e7576485113d3ff0b6af331",
+        "size_in_bytes": 224032
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_lz4.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "e96c521c8f8d77a7edca94b8bf1e7caa99758e7e32f63a0a22932b8a46072c60",
+        "sha256_in_prefix": "b0e8cb7262201116686df09b20860cb91902cfa1f7f69cf7277b61c8cf2abfc8",
+        "size_in_bytes": 201712
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_lz4f.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "e56a05bbbf77f340d0630eca9ec0d195e7eb0b13a9aa4d79fd806d4510795b86",
+        "sha256_in_prefix": "3741aac1b448595f8230c8c97b29b320289414bb4d6b7d1a2e49307d270655d9",
+        "size_in_bytes": 223648
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_lzf.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "c5cf8543a3510425a1980aa76d780cfd430edaa1db1c0e47e3ede2b56852980f",
+        "sha256_in_prefix": "8e64a93cd82cabbc5d8eaf2b01a3970ef4b707c597974de1d791198e802c51b3",
+        "size_in_bytes": 200480
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_lzma.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "bb5f1e250d4c456fccefbb02cdf4971dacc7562b13661fcbc2cc8b62bad920bc",
+        "sha256_in_prefix": "d85ebb84324630c223c22bc907fa74dd22c108ab1137106b29862bd60e46c3c7",
+        "size_in_bytes": 223888
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_pglz.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "f6a433e30dd23f3813ad5403494faa9cf10774f7c3f8a051a9c6139ab26276d4",
+        "sha256_in_prefix": "aa5bd7c6b4c26bc73d64e32009149053d49fe8ccc781068188393bbe5222897f",
+        "size_in_bytes": 201456
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_png.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "e22a70d43702df49e4bf34b56bc9048b32ef348aa62e7aef2a50f926b14c4dee",
+        "sha256_in_prefix": "c11dd204d3a0009d138dcffb12425030c6de4e9c73db8a3b060edebfcb221eeb",
+        "size_in_bytes": 206512
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_rcomp.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "95fbb14d1d8a72a0b5e2151d6bd7f120eb4a14dca6bff75c32e75be98b7ea0fa",
+        "sha256_in_prefix": "db69c7445e7f7733c0752c52e82ae49ac25fdb17cbd431b2e74415840fdd0397",
+        "size_in_bytes": 222672
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_shared.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "6eac2a4b2baf00c4a263b2c3030149c6d21f64a78ecc04c03da079be541912c2",
+        "sha256_in_prefix": "2c73ae5e394c9d634878d021af33488cefc05fcadaf734a9d332a2df706e14d1",
+        "size_in_bytes": 239648
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_snappy.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "bb31b7fa7ff8f04ca807371190c0e29e83041a5dd30edfbea03cba7c4a5820b6",
+        "sha256_in_prefix": "5d8701d048a38336b84e2d542f0b6f09dc71f5c113920e523ecd603207e415a0",
+        "size_in_bytes": 204368
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_tiff.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "1bf73fd5af65c1878a5cc72eb52b2cfd95d8f5cb79c2c9ac1e3b83d7ac117f35",
+        "sha256_in_prefix": "98475c5515742317910e039ea33295ce19e8470d8c915f745433272e468787b3",
+        "size_in_bytes": 268432
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_webp.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "41829a2f60cb3c33e2636f4789ff9b6db8a9f381268407fd4ad04e647fe60efd",
+        "sha256_in_prefix": "265115f29d9cde098fd46bcf281531231dcdf336f31f2dcdab1d1f3c9cc6af77",
+        "size_in_bytes": 206544
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_zfp.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "00ab2ccf9b435fedfdea170d944b5993094dc132e4b7aa0489c690b023f7fde5",
+        "sha256_in_prefix": "ab701c9dd7ee233dbd762899894f1266c8083953212e613d4bcda1d128457e1a",
+        "size_in_bytes": 246112
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_zlib.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "4a25929b34b18d963703a0bb5a388f870aaa8c3c87800e469d87726e788f598f",
+        "sha256_in_prefix": "d5f14dadc168ce7324780cd53148fd428c05794a01af3caa611a5cedf8ce7463",
+        "size_in_bytes": 223360
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_zopfli.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "8f5c86a0714bd41f5cfb0f67ea4fce5f6068c21a54e8a3532f093647341dad5d",
+        "sha256_in_prefix": "108a63fe9a3a102ab4ebac08fdd249104d3b28dc885ab50d25adaf9214d731de",
+        "size_in_bytes": 183296
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/_zstd.cpython-38-darwin.so",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/imagecodecs_1623996876102/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "7c2a2e19c77321b7cc55692397b065cce5f2afbe877784b63200452cea500d5d",
+        "sha256_in_prefix": "19aa9059d84073866f4fdf5c71ec967b5ee00a834e9a484e5bc30d968a597685",
+        "size_in_bytes": 204016
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/imagecodecs.py",
+        "path_type": "hardlink",
+        "sha256": "030fd7c081aa94d1ee0d4b12c25a4f108f65a6e82ed430093dc3c618b4f042ab",
+        "sha256_in_prefix": "030fd7c081aa94d1ee0d4b12c25a4f108f65a6e82ed430093dc3c618b4f042ab",
+        "size_in_bytes": 33350
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-aom",
+        "path_type": "hardlink",
+        "sha256": "ce3386408d82f8db6060e47ba199b5b1f7b3ff9f327c29a772621b7eefbc3946",
+        "sha256_in_prefix": "ce3386408d82f8db6060e47ba199b5b1f7b3ff9f327c29a772621b7eefbc3946",
+        "size_in_bytes": 1341
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-bitshuffle",
+        "path_type": "hardlink",
+        "sha256": "ef357c2061cf67db298f9f1565572ee229ad9263582a9f9d0ebff5094f5d10ac",
+        "sha256_in_prefix": "ef357c2061cf67db298f9f1565572ee229ad9263582a9f9d0ebff5094f5d10ac",
+        "size_in_bytes": 1148
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-blosc",
+        "path_type": "hardlink",
+        "sha256": "d7d6ea3deb4f9b68cf5e327cc554f5b1ffd5eca3cdc9e60f797ec50b6160d66a",
+        "sha256_in_prefix": "d7d6ea3deb4f9b68cf5e327cc554f5b1ffd5eca3cdc9e60f797ec50b6160d66a",
+        "size_in_bytes": 1576
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-brotli",
+        "path_type": "hardlink",
+        "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+        "sha256_in_prefix": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+        "size_in_bytes": 1084
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-brunsli",
+        "path_type": "hardlink",
+        "sha256": "5e12afa6f28bb5ce6959ab7d48b704ea1228263803cc61bd23966dc3157c4a9d",
+        "sha256_in_prefix": "5e12afa6f28bb5ce6959ab7d48b704ea1228263803cc61bd23966dc3157c4a9d",
+        "size_in_bytes": 1074
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-bzip2",
+        "path_type": "hardlink",
+        "sha256": "4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204",
+        "sha256_in_prefix": "4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204",
+        "size_in_bytes": 1901
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-cfitsio",
+        "path_type": "hardlink",
+        "sha256": "61fe78baae038a09d1e7acb7e9a4ba05ee1dbada48f3879bdc6a6dca4ff1f4f6",
+        "sha256_in_prefix": "61fe78baae038a09d1e7acb7e9a4ba05ee1dbada48f3879bdc6a6dca4ff1f4f6",
+        "size_in_bytes": 1435
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-charls",
+        "path_type": "hardlink",
+        "sha256": "73b19321a7d74c7b3d0aca858b224f22fe3a4464b55e6b2fbfe846d93ffa5dec",
+        "sha256_in_prefix": "73b19321a7d74c7b3d0aca858b224f22fe3a4464b55e6b2fbfe846d93ffa5dec",
+        "size_in_bytes": 1500
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-dav1d",
+        "path_type": "hardlink",
+        "sha256": "b19d87106bf153f6233927d95347b54e7bec089fbfb49e3c36133b56e45b1571",
+        "sha256_in_prefix": "b19d87106bf153f6233927d95347b54e7bec089fbfb49e3c36133b56e45b1571",
+        "size_in_bytes": 1340
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-fastlz",
+        "path_type": "hardlink",
+        "sha256": "709981ca7882d4f07861df4306639c9ebe9020157b878f3c473a7d7c19b4f4dc",
+        "sha256_in_prefix": "709981ca7882d4f07861df4306639c9ebe9020157b878f3c473a7d7c19b4f4dc",
+        "size_in_bytes": 1225
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-giflib",
+        "path_type": "hardlink",
+        "sha256": "0c9b7990ecdca88b676db232c226548ac408b279f550d424d996f0d83591dd8e",
+        "sha256_in_prefix": "0c9b7990ecdca88b676db232c226548ac408b279f550d424d996f0d83591dd8e",
+        "size_in_bytes": 1088
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-highway",
+        "path_type": "hardlink",
+        "sha256": "5ad8c213095c573921d7388edf93f6a9f54490b8ebf3b165ae8ef1947cf70846",
+        "sha256_in_prefix": "5ad8c213095c573921d7388edf93f6a9f54490b8ebf3b165ae8ef1947cf70846",
+        "size_in_bytes": 11556
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-jpeg",
+        "path_type": "hardlink",
+        "sha256": "437bdc147ed96e033412a7cd3130ad8cfffe552d2c42c0d790512883a54abe4e",
+        "sha256_in_prefix": "437bdc147ed96e033412a7cd3130ad8cfffe552d2c42c0d790512883a54abe4e",
+        "size_in_bytes": 19348
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-jpeg-xl",
+        "path_type": "hardlink",
+        "sha256": "f2ffa5942b316849be283deaeb2912e2e5b5b17e91012bede8210210ff3e91e7",
+        "sha256_in_prefix": "f2ffa5942b316849be283deaeb2912e2e5b5b17e91012bede8210210ff3e91e7",
+        "size_in_bytes": 11562
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-jpg_0xc3",
+        "path_type": "hardlink",
+        "sha256": "e3accfeda2f4742c7a9960eb1db49695cda887618f18d2ccf91597795e27ac65",
+        "sha256_in_prefix": "e3accfeda2f4742c7a9960eb1db49695cda887618f18d2ccf91597795e27ac65",
+        "size_in_bytes": 1559
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-jxrlib",
+        "path_type": "hardlink",
+        "sha256": "223d21eac633788ada036025b083079bbd7b7f62ec82379cc45f75d1380931ce",
+        "sha256_in_prefix": "223d21eac633788ada036025b083079bbd7b7f62ec82379cc45f75d1380931ce",
+        "size_in_bytes": 1407
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-lcms2",
+        "path_type": "hardlink",
+        "sha256": "c725daac91a9259ce5e195683c0eeb797d345035c36ac5ba114c9fa80e11639a",
+        "sha256_in_prefix": "c725daac91a9259ce5e195683c0eeb797d345035c36ac5ba114c9fa80e11639a",
+        "size_in_bytes": 1078
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-lerc",
+        "path_type": "hardlink",
+        "sha256": "b5726bddcd8e94536717d7e125a366f163d0b20818b63cd452fd69b0d59bc598",
+        "sha256_in_prefix": "b5726bddcd8e94536717d7e125a366f163d0b20818b63cd452fd69b0d59bc598",
+        "size_in_bytes": 9155
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libaec",
+        "path_type": "hardlink",
+        "sha256": "c96bfa2f9a57727bb46f5b48987c8a540b0831293e1d09c4565ef12644f4b0cd",
+        "sha256_in_prefix": "c96bfa2f9a57727bb46f5b48987c8a540b0831293e1d09c4565ef12644f4b0cd",
+        "size_in_bytes": 1537
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libaivf",
+        "path_type": "hardlink",
+        "sha256": "e0ba04d4885bf25b03e20c8078e5f4b241bfe6a941d4a9bcc14cab09e2c27e62",
+        "sha256_in_prefix": "e0ba04d4885bf25b03e20c8078e5f4b241bfe6a941d4a9bcc14cab09e2c27e62",
+        "size_in_bytes": 8517
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libdeflate",
+        "path_type": "hardlink",
+        "sha256": "5d246dd2537307b80fed9ba5fdddf5d0fe7a8f023393a071182b9daed56b40fe",
+        "sha256_in_prefix": "5d246dd2537307b80fed9ba5fdddf5d0fe7a8f023393a071182b9daed56b40fe",
+        "size_in_bytes": 1052
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libjpeg",
+        "path_type": "hardlink",
+        "sha256": "f8bdebe9b6c7ae225d2a889b06c98693554afd49c9bb3880ae3fe39ec546df01",
+        "sha256_in_prefix": "f8bdebe9b6c7ae225d2a889b06c98693554afd49c9bb3880ae3fe39ec546df01",
+        "size_in_bytes": 3444
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libjpeg-turbo",
+        "path_type": "hardlink",
+        "sha256": "8412238c5ad95965cf3c3197791e9dea8b5fae505d133449e33ee2fa754fe61e",
+        "sha256_in_prefix": "8412238c5ad95965cf3c3197791e9dea8b5fae505d133449e33ee2fa754fe61e",
+        "size_in_bytes": 6008
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-liblj92",
+        "path_type": "hardlink",
+        "sha256": "03c1c62c95b2b6c821840e05d25da8b51ccfca3a1672662605b30e3f1890294b",
+        "sha256_in_prefix": "03c1c62c95b2b6c821840e05d25da8b51ccfca3a1672662605b30e3f1890294b",
+        "size_in_bytes": 1048
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-liblzma",
+        "path_type": "hardlink",
+        "sha256": "23e4a187f21029caaf0bcf20f8441250290893fb5af24c6a154fa31ff150e22b",
+        "sha256_in_prefix": "23e4a187f21029caaf0bcf20f8441250290893fb5af24c6a154fa31ff150e22b",
+        "size_in_bytes": 279
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libmng",
+        "path_type": "hardlink",
+        "sha256": "ba280734838eb3f22a85b92a7e62de357d4d4c325029dce723b0cb125c417c35",
+        "sha256_in_prefix": "ba280734838eb3f22a85b92a7e62de357d4d4c325029dce723b0cb125c417c35",
+        "size_in_bytes": 4622
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libpng",
+        "path_type": "hardlink",
+        "sha256": "f9850940c6606003eea9c8864b2a3f177eb5c963614aba5a3c5a24c47dd043ab",
+        "sha256_in_prefix": "f9850940c6606003eea9c8864b2a3f177eb5c963614aba5a3c5a24c47dd043ab",
+        "size_in_bytes": 4985
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libtiff",
+        "path_type": "hardlink",
+        "sha256": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7",
+        "sha256_in_prefix": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7",
+        "size_in_bytes": 1146
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-libwebp",
+        "path_type": "hardlink",
+        "sha256": "e293d1dddc9785200b1f58a4f5293543cf8566d9e0b8a3c02fad955035b19f42",
+        "sha256_in_prefix": "e293d1dddc9785200b1f58a4f5293543cf8566d9e0b8a3c02fad955035b19f42",
+        "size_in_bytes": 1495
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-lz4",
+        "path_type": "hardlink",
+        "sha256": "d15d99c8dc6b0ec22174c0e563a95bc40f9363ca7f9d9d793bb5c5a8e8d0af71",
+        "sha256_in_prefix": "d15d99c8dc6b0ec22174c0e563a95bc40f9363ca7f9d9d793bb5c5a8e8d0af71",
+        "size_in_bytes": 1311
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-lzf",
+        "path_type": "hardlink",
+        "sha256": "78411e481503fad783a6581bf78946812decae397004caf149639dac84182d4c",
+        "sha256_in_prefix": "78411e481503fad783a6581bf78946812decae397004caf149639dac84182d4c",
+        "size_in_bytes": 1436
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-openjpeg",
+        "path_type": "hardlink",
+        "sha256": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
+        "sha256_in_prefix": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
+        "size_in_bytes": 2112
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-postgresql",
+        "path_type": "hardlink",
+        "sha256": "31ccadc0a70e8e0e8a35c5833567b64388dfe34987d962e1911554e271294105",
+        "sha256_in_prefix": "31ccadc0a70e8e0e8a35c5833567b64388dfe34987d962e1911554e271294105",
+        "size_in_bytes": 1192
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-rav1e",
+        "path_type": "hardlink",
+        "sha256": "1dc445d0f69bcd5f397c3e307804c13f3fab76aa83626e75d6a9e2e18b2d1e88",
+        "sha256_in_prefix": "1dc445d0f69bcd5f397c3e307804c13f3fab76aa83626e75d6a9e2e18b2d1e88",
+        "size_in_bytes": 1357
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-snappy",
+        "path_type": "hardlink",
+        "sha256": "55172044f7e241207117448a4d9d6ba1d0925c8ad66b5d4c08c70adfa9cc3de6",
+        "sha256_in_prefix": "55172044f7e241207117448a4d9d6ba1d0925c8ad66b5d4c08c70adfa9cc3de6",
+        "size_in_bytes": 2645
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zfp",
+        "path_type": "hardlink",
+        "sha256": "efaf78b45a95b2c4e28bf65090f868d3ebee485926642d5b9a334c9d3995b90e",
+        "sha256_in_prefix": "efaf78b45a95b2c4e28bf65090f868d3ebee485926642d5b9a334c9d3995b90e",
+        "size_in_bytes": 2962
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zlib",
+        "path_type": "hardlink",
+        "sha256": "fefeb20bf292c34f1e8d5114731308aac188d65aa3dc5f85bb2e9b0d007b7ab8",
+        "sha256_in_prefix": "fefeb20bf292c34f1e8d5114731308aac188d65aa3dc5f85bb2e9b0d007b7ab8",
+        "size_in_bytes": 1002
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zlib-ng",
+        "path_type": "hardlink",
+        "sha256": "a55f0f9f911b390f8aec8cdf729f643aa8912a603255a5d93866039fb0425339",
+        "sha256_in_prefix": "a55f0f9f911b390f8aec8cdf729f643aa8912a603255a5d93866039fb0425339",
+        "size_in_bytes": 886
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zopfli",
+        "path_type": "hardlink",
+        "sha256": "018b1cb87efdf7a04c2fcc13d57ed63f62149113fb207b27ea13430d64f13513",
+        "sha256_in_prefix": "018b1cb87efdf7a04c2fcc13d57ed63f62149113fb207b27ea13430d64f13513",
+        "size_in_bytes": 11341
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/LICENSE-zstd",
+        "path_type": "hardlink",
+        "sha256": "2c1a7fa704df8f3a606f6fc010b8b5aaebf403f3aeec339a12048f1ba7331a0b",
+        "sha256_in_prefix": "2c1a7fa704df8f3a606f6fc010b8b5aaebf403f3aeec339a12048f1ba7331a0b",
+        "size_in_bytes": 1530
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/licenses/PATENTS-rav1e",
+        "path_type": "hardlink",
+        "sha256": "6e8b7ef08e41a079055fa46850dc72fd34f7d9fe300eea316d32555a6f0550bf",
+        "sha256_in_prefix": "6e8b7ef08e41a079055fa46850dc72fd34f7d9fe300eea316d32555a6f0550bf",
+        "size_in_bytes": 5810
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imagecodecs/numcodecs.py",
+        "path_type": "hardlink",
+        "sha256": "b1f714be3a9cb5a4fe3fb837551b25ed1a0abf62dd23f0f834785732b8f98bbc",
+        "sha256_in_prefix": "b1f714be3a9cb5a4fe3fb837551b25ed1a0abf62dd23f0f834785732b8f98bbc",
+        "size_in_bytes": 26824
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "4b8f8e0d5e313395ab2f4bc76e512325d2c590da3e4ffaa836dd91c2607f9940",
+  "size": 6720158,
+  "subdir": "osx-arm64",
+  "timestamp": 1623997450000,
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/imagecodecs-2021.6.8-py38h93c653a_0.tar.bz2",
+  "version": "2021.6.8"
+}

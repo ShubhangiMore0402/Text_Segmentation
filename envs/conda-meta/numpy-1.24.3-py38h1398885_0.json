@@ -1,0 +1,35 @@
+{
+  "build": "py38h1398885_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-arm64",
+  "constrains": [],
+  "depends": [
+    "python >=3.8,<3.9.0a0",
+    "libcxx >=14.0.6",
+    "blas * openblas",
+    "libopenblas >=0.3.20,<1.0a0",
+    "numpy-base 1.24.3 py38h90707a3_0"
+  ],
+  "extracted_package_dir": "/opt/miniconda3/pkgs/numpy-1.24.3-py38h1398885_0",
+  "files": [],
+  "fn": "numpy-1.24.3-py38h1398885_0.conda",
+  "license": "BSD-3-Clause",
+  "link": {
+    "source": "/opt/miniconda3/pkgs/numpy-1.24.3-py38h1398885_0",
+    "type": 1
+  },
+  "md5": "0ce17e3f9f3ed79c0ab47223915a27c8",
+  "name": "numpy",
+  "package_tarball_full_path": "/opt/miniconda3/pkgs/numpy-1.24.3-py38h1398885_0.conda",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "3a04d1d619a0ed47ab9ae487823da2468cd2b3f36aff00b682577ae56b4e683a",
+  "size": 12139,
+  "subdir": "osx-arm64",
+  "timestamp": 1682520801000,
+  "url": "https://repo.anaconda.com/pkgs/main/osx-arm64/numpy-1.24.3-py38h1398885_0.conda",
+  "version": "1.24.3"
+}

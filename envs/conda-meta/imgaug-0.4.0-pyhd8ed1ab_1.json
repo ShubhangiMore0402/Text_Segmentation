@@ -1,0 +1,712 @@
+{
+  "build": "pyhd8ed1ab_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "constrains": [],
+  "depends": [
+    "imageio",
+    "matplotlib-base",
+    "numpy >=1.15",
+    "opencv",
+    "pillow",
+    "python >=3.4",
+    "scikit-image >=0.14.2",
+    "scipy",
+    "shapely",
+    "six"
+  ],
+  "extracted_package_dir": "/opt/miniconda3/pkgs/imgaug-0.4.0-pyhd8ed1ab_1",
+  "files": [
+    "lib/python3.8/site-packages/imgaug-0.4.0.dist-info/INSTALLER",
+    "lib/python3.8/site-packages/imgaug-0.4.0.dist-info/LICENSE",
+    "lib/python3.8/site-packages/imgaug-0.4.0.dist-info/METADATA",
+    "lib/python3.8/site-packages/imgaug-0.4.0.dist-info/RECORD",
+    "lib/python3.8/site-packages/imgaug-0.4.0.dist-info/REQUESTED",
+    "lib/python3.8/site-packages/imgaug-0.4.0.dist-info/WHEEL",
+    "lib/python3.8/site-packages/imgaug-0.4.0.dist-info/direct_url.json",
+    "lib/python3.8/site-packages/imgaug-0.4.0.dist-info/top_level.txt",
+    "lib/python3.8/site-packages/imgaug/DejaVuSans.ttf",
+    "lib/python3.8/site-packages/imgaug/__init__.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/__init__.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/base.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/batches.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/bbs.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/heatmaps.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/kps.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/lines.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/normalization.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/polys.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/segmaps.py",
+    "lib/python3.8/site-packages/imgaug/augmentables/utils.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/__init__.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/arithmetic.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/artistic.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/base.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/blend.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/blur.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/collections.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/color.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/contrast.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/convolutional.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/debug.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/edges.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/flip.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/geometric.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/imgcorruptlike.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/meta.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/overlay.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/pillike.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/pooling.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/segmentation.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/size.py",
+    "lib/python3.8/site-packages/imgaug/augmenters/weather.py",
+    "lib/python3.8/site-packages/imgaug/dtypes.py",
+    "lib/python3.8/site-packages/imgaug/external/__init__.py",
+    "lib/python3.8/site-packages/imgaug/external/opensimplex.py",
+    "lib/python3.8/site-packages/imgaug/external/poly_point_isect_py2py3.py",
+    "lib/python3.8/site-packages/imgaug/imgaug.py",
+    "lib/python3.8/site-packages/imgaug/multicore.py",
+    "lib/python3.8/site-packages/imgaug/parameters.py",
+    "lib/python3.8/site-packages/imgaug/quokka.jpg",
+    "lib/python3.8/site-packages/imgaug/quokka_annotations.json",
+    "lib/python3.8/site-packages/imgaug/quokka_depth_map_halfres.png",
+    "lib/python3.8/site-packages/imgaug/random.py",
+    "lib/python3.8/site-packages/imgaug/testutils.py",
+    "lib/python3.8/site-packages/imgaug/validation.py",
+    "lib/python3.8/site-packages/imgaug/__pycache__/__init__.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/__init__.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/base.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/batches.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/bbs.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/heatmaps.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/kps.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/lines.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/normalization.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/polys.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/segmaps.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/utils.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/__init__.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/arithmetic.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/artistic.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/base.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/blend.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/blur.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/collections.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/color.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/contrast.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/convolutional.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/debug.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/edges.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/flip.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/geometric.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/imgcorruptlike.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/meta.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/overlay.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/pillike.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/pooling.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/segmentation.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/size.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/weather.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/__pycache__/dtypes.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/external/__pycache__/__init__.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/external/__pycache__/opensimplex.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/external/__pycache__/poly_point_isect_py2py3.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/__pycache__/imgaug.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/__pycache__/multicore.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/__pycache__/parameters.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/__pycache__/random.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/__pycache__/testutils.cpython-38.pyc",
+    "lib/python3.8/site-packages/imgaug/__pycache__/validation.cpython-38.pyc"
+  ],
+  "fn": "imgaug-0.4.0-pyhd8ed1ab_1.tar.bz2",
+  "license": "MIT",
+  "link": {
+    "source": "/opt/miniconda3/pkgs/imgaug-0.4.0-pyhd8ed1ab_1",
+    "type": 1
+  },
+  "md5": "be5f07159dcfb83b96fad8024f0233e1",
+  "name": "imgaug",
+  "noarch": "python",
+  "package_tarball_full_path": "/opt/miniconda3/pkgs/imgaug-0.4.0-pyhd8ed1ab_1.tar.bz2",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "site-packages/imgaug-0.4.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "site-packages/imgaug-0.4.0.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "a4d82f05083fc6a43d0a2ad026c7445dd28b529f717c91851933032459858eb7",
+        "sha256_in_prefix": "a4d82f05083fc6a43d0a2ad026c7445dd28b529f717c91851933032459858eb7",
+        "size_in_bytes": 1073
+      },
+      {
+        "_path": "site-packages/imgaug-0.4.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "abad350a3f01341ac357e4ab39a78084c4a9b775f6c1f503a63c5be78edd1865",
+        "sha256_in_prefix": "abad350a3f01341ac357e4ab39a78084c4a9b775f6c1f503a63c5be78edd1865",
+        "size_in_bytes": 1777
+      },
+      {
+        "_path": "site-packages/imgaug-0.4.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "189a1a49958d303bd71bc697b550128a283a0e03def6a427745c0468767a04b0",
+        "sha256_in_prefix": "189a1a49958d303bd71bc697b550128a283a0e03def6a427745c0468767a04b0",
+        "size_in_bytes": 7233
+      },
+      {
+        "_path": "site-packages/imgaug-0.4.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/imgaug-0.4.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "1b5e87e00dc87a84269cead8578b9e6462928e18a95f1f3373c9eef451a5bcc0",
+        "sha256_in_prefix": "1b5e87e00dc87a84269cead8578b9e6462928e18a95f1f3373c9eef451a5bcc0",
+        "size_in_bytes": 92
+      },
+      {
+        "_path": "site-packages/imgaug-0.4.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "7569cb42347e46df36c6355582b43f4b5931d792929f989476ce351d1062b3a0",
+        "sha256_in_prefix": "7569cb42347e46df36c6355582b43f4b5931d792929f989476ce351d1062b3a0",
+        "size_in_bytes": 102
+      },
+      {
+        "_path": "site-packages/imgaug-0.4.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "7637a4538852b3d39c3f300d9e367ab7b06f737f175ddb957a85ca77a98f0fce",
+        "sha256_in_prefix": "7637a4538852b3d39c3f300d9e367ab7b06f737f175ddb957a85ca77a98f0fce",
+        "size_in_bytes": 7
+      },
+      {
+        "_path": "site-packages/imgaug/DejaVuSans.ttf",
+        "path_type": "hardlink",
+        "sha256": "42a6ee317989b6b61634b3304457bc25186abdc83113d93e8f4c0a25e02e9756",
+        "sha256_in_prefix": "42a6ee317989b6b61634b3304457bc25186abdc83113d93e8f4c0a25e02e9756",
+        "size_in_bytes": 742380
+      },
+      {
+        "_path": "site-packages/imgaug/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e094a46329eac782fd0f666a3819f9ed1bb20c8c51a92e6c1a5bb64d0d826dae",
+        "sha256_in_prefix": "e094a46329eac782fd0f666a3819f9ed1bb20c8c51a92e6c1a5bb64d0d826dae",
+        "size_in_bytes": 556
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "ecf42fb972487d1af290b4c12f5d144b9343e7bd9ccfa7c2dbf2440ab285b087",
+        "sha256_in_prefix": "ecf42fb972487d1af290b4c12f5d144b9343e7bd9ccfa7c2dbf2440ab285b087",
+        "size_in_bytes": 390
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/base.py",
+        "path_type": "hardlink",
+        "sha256": "acad77a21d5a15a17e63754c06edf79aba341766cfba70e6b9e52a689b8a074f",
+        "sha256_in_prefix": "acad77a21d5a15a17e63754c06edf79aba341766cfba70e6b9e52a689b8a074f",
+        "size_in_bytes": 582
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/batches.py",
+        "path_type": "hardlink",
+        "sha256": "a03dd34c24e3a20e1010074a9809ca5c976b7e415a5c910c41fd45719d2f1eee",
+        "sha256_in_prefix": "a03dd34c24e3a20e1010074a9809ca5c976b7e415a5c910c41fd45719d2f1eee",
+        "size_in_bytes": 43998
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/bbs.py",
+        "path_type": "hardlink",
+        "sha256": "a87d691b09575eb073f5dd419b75151572e5483009f8d4ede2eb7f390825dfe6",
+        "sha256_in_prefix": "a87d691b09575eb073f5dd419b75151572e5483009f8d4ede2eb7f390825dfe6",
+        "size_in_bytes": 76035
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/heatmaps.py",
+        "path_type": "hardlink",
+        "sha256": "e53a4010d9c988d84e2ac5fc6f5e34384ba21e61ec112dc3e222ab332b3e4689",
+        "sha256_in_prefix": "e53a4010d9c988d84e2ac5fc6f5e34384ba21e61ec112dc3e222ab332b3e4689",
+        "size_in_bytes": 25285
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/kps.py",
+        "path_type": "hardlink",
+        "sha256": "1737da931c017921993a20e172817a2c4733f4d33d5070ce2fcdb7e7f7918547",
+        "sha256_in_prefix": "1737da931c017921993a20e172817a2c4733f4d33d5070ce2fcdb7e7f7918547",
+        "size_in_bytes": 49486
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/lines.py",
+        "path_type": "hardlink",
+        "sha256": "191d749a69f94a72c453b2fe0861ec7085723c4f704ee474b776fe20f949f266",
+        "sha256_in_prefix": "191d749a69f94a72c453b2fe0861ec7085723c4f704ee474b776fe20f949f266",
+        "size_in_bytes": 86659
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/normalization.py",
+        "path_type": "hardlink",
+        "sha256": "165fd37d68cdbc8863f310fd5f6df514a63e69f008c0dca14bf504a1abc8c364",
+        "sha256_in_prefix": "165fd37d68cdbc8863f310fd5f6df514a63e69f008c0dca14bf504a1abc8c364",
+        "size_in_bytes": 54827
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/polys.py",
+        "path_type": "hardlink",
+        "sha256": "c96a1b1f6ff01ef39817a6d6fe72a817d968fa85a3b4932e6ecc05a5adc518cf",
+        "sha256_in_prefix": "c96a1b1f6ff01ef39817a6d6fe72a817d968fa85a3b4932e6ecc05a5adc518cf",
+        "size_in_bytes": 106816
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/segmaps.py",
+        "path_type": "hardlink",
+        "sha256": "f396c1d2d62432a149359bf11ca2adac98d4338da13fd355739c01c81c522be5",
+        "sha256_in_prefix": "f396c1d2d62432a149359bf11ca2adac98d4338da13fd355739c01c81c522be5",
+        "size_in_bytes": 22141
+      },
+      {
+        "_path": "site-packages/imgaug/augmentables/utils.py",
+        "path_type": "hardlink",
+        "sha256": "390d77bc5e598ca34cb827be51d5e7a2bf446da71dbfd580006e2175f542c4e6",
+        "sha256_in_prefix": "390d77bc5e598ca34cb827be51d5e7a2bf446da71dbfd580006e2175f542c4e6",
+        "size_in_bytes": 12090
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "8db295005084767bc6a73aa37236a8bd07e061f4ddea0b3274804e92d22759dc",
+        "sha256_in_prefix": "8db295005084767bc6a73aa37236a8bd07e061f4ddea0b3274804e92d22759dc",
+        "size_in_bytes": 1002
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/arithmetic.py",
+        "path_type": "hardlink",
+        "sha256": "6d46839a64cccda9cffcf8774d6fa1b6a2d74914680a61cf3badb4ee5b130c78",
+        "sha256_in_prefix": "6d46839a64cccda9cffcf8774d6fa1b6a2d74914680a61cf3badb4ee5b130c78",
+        "size_in_bytes": 196788
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/artistic.py",
+        "path_type": "hardlink",
+        "sha256": "df8d373c7c1fc627c04081d26810bc64eaa450383e3bfe114deb180fc7bea02c",
+        "sha256_in_prefix": "df8d373c7c1fc627c04081d26810bc64eaa450383e3bfe114deb180fc7bea02c",
+        "size_in_bytes": 15813
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/base.py",
+        "path_type": "hardlink",
+        "sha256": "e2e5967dcf534bc61ae128fd1752eacb2d5bbd83cadf9df9d6d1bf57d0a36747",
+        "sha256_in_prefix": "e2e5967dcf534bc61ae128fd1752eacb2d5bbd83cadf9df9d6d1bf57d0a36747",
+        "size_in_bytes": 2470
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/blend.py",
+        "path_type": "hardlink",
+        "sha256": "696463a84067e867778533d9326c348ffcb444be1301620f2a23832383292cfd",
+        "sha256_in_prefix": "696463a84067e867778533d9326c348ffcb444be1301620f2a23832383292cfd",
+        "size_in_bytes": 163298
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/blur.py",
+        "path_type": "hardlink",
+        "sha256": "8c93587dcebe66f6c6f85bea9cf5ab85f9cd5c5df95f133ea4ace02ccb2964d1",
+        "sha256_in_prefix": "8c93587dcebe66f6c6f85bea9cf5ab85f9cd5c5df95f133ea4ace02ccb2964d1",
+        "size_in_bytes": 51082
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/collections.py",
+        "path_type": "hardlink",
+        "sha256": "d16d0bbb64f5ccadd76aa762e3bab6d3a3b737fe34d5d169722a2bd4fa2ed6d8",
+        "sha256_in_prefix": "d16d0bbb64f5ccadd76aa762e3bab6d3a3b737fe34d5d169722a2bd4fa2ed6d8",
+        "size_in_bytes": 14342
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/color.py",
+        "path_type": "hardlink",
+        "sha256": "02607fcaf28b2d62f6c9908042488f7f112e57661937eda233a6032bb106d699",
+        "sha256_in_prefix": "02607fcaf28b2d62f6c9908042488f7f112e57661937eda233a6032bb106d699",
+        "size_in_bytes": 161880
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/contrast.py",
+        "path_type": "hardlink",
+        "sha256": "6115a654c745e9b2c4c983ceafb776ade48d71badc5ec8e6c7225b759aab7261",
+        "sha256_in_prefix": "6115a654c745e9b2c4c983ceafb776ade48d71badc5ec8e6c7225b759aab7261",
+        "size_in_bytes": 67481
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/convolutional.py",
+        "path_type": "hardlink",
+        "sha256": "e55fd475d0eaf8570d0f44955910e94e912da2c9b835264c65d92baaa82ab10b",
+        "sha256_in_prefix": "e55fd475d0eaf8570d0f44955910e94e912da2c9b835264c65d92baaa82ab10b",
+        "size_in_bytes": 29366
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/debug.py",
+        "path_type": "hardlink",
+        "sha256": "df0587abb625ef13cec80c93e6d1a589aeb0133dddd505d6619ec0bea0f1a6fe",
+        "sha256_in_prefix": "df0587abb625ef13cec80c93e6d1a589aeb0133dddd505d6619ec0bea0f1a6fe",
+        "size_in_bytes": 39118
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/edges.py",
+        "path_type": "hardlink",
+        "sha256": "64925e99b71f0244d5d02a28fa373111c6c86a5c8a8c6c666b7584fc8bc5694d",
+        "sha256_in_prefix": "64925e99b71f0244d5d02a28fa373111c6c86a5c8a8c6c666b7584fc8bc5694d",
+        "size_in_bytes": 20029
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/flip.py",
+        "path_type": "hardlink",
+        "sha256": "5a568618befaad985d31fff162295a172a6a1e70014fc25c2bae61cc945c3f33",
+        "sha256_in_prefix": "5a568618befaad985d31fff162295a172a6a1e70014fc25c2bae61cc945c3f33",
+        "size_in_bytes": 38283
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/geometric.py",
+        "path_type": "hardlink",
+        "sha256": "e27e8710d7273298778b941bb7d1feea8fc0b0a1ff68cf5e38a41c76ca3f29a4",
+        "sha256_in_prefix": "e27e8710d7273298778b941bb7d1feea8fc0b0a1ff68cf5e38a41c76ca3f29a4",
+        "size_in_bytes": 250515
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/imgcorruptlike.py",
+        "path_type": "hardlink",
+        "sha256": "6e3f06813a11e1c7ae23bbbec57c12dd1d094946456324cad530b9e03a9f9dc4",
+        "sha256_in_prefix": "6e3f06813a11e1c7ae23bbbec57c12dd1d094946456324cad530b9e03a9f9dc4",
+        "size_in_bytes": 69832
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/meta.py",
+        "path_type": "hardlink",
+        "sha256": "9cff60e0400c3c0d8726d22779919aa7f73fc9e827866e26be18a018695bca6c",
+        "sha256_in_prefix": "9cff60e0400c3c0d8726d22779919aa7f73fc9e827866e26be18a018695bca6c",
+        "size_in_bytes": 220235
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/overlay.py",
+        "path_type": "hardlink",
+        "sha256": "aefa50e28972be0b7c2332825c318db8e21e9159b38fc2402505b41ed0249930",
+        "sha256_in_prefix": "aefa50e28972be0b7c2332825c318db8e21e9159b38fc2402505b41ed0249930",
+        "size_in_bytes": 1920
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/pillike.py",
+        "path_type": "hardlink",
+        "sha256": "aa0d9dd7d5ccda8ff8bc548d58f75c469546c637a1f7ca46608a4f7b6279fe4d",
+        "sha256_in_prefix": "aa0d9dd7d5ccda8ff8bc548d58f75c469546c637a1f7ca46608a4f7b6279fe4d",
+        "size_in_bytes": 82703
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/pooling.py",
+        "path_type": "hardlink",
+        "sha256": "0d3b9c879cc0c671ad4e01e098b728352c9883f2943cee57318e9984427fb764",
+        "sha256_in_prefix": "0d3b9c879cc0c671ad4e01e098b728352c9883f2943cee57318e9984427fb764",
+        "size_in_bytes": 28828
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/segmentation.py",
+        "path_type": "hardlink",
+        "sha256": "85de32ad7e39586afedbd7d44c16109fd0fcee0ab1fd53e84aab311d0fd0a20d",
+        "sha256_in_prefix": "85de32ad7e39586afedbd7d44c16109fd0fcee0ab1fd53e84aab311d0fd0a20d",
+        "size_in_bytes": 76359
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/size.py",
+        "path_type": "hardlink",
+        "sha256": "e142b3120cc25dd3630dd21ae647dc90160b61ae12431508a9ee9da94a0bc5cf",
+        "sha256_in_prefix": "e142b3120cc25dd3630dd21ae647dc90160b61ae12431508a9ee9da94a0bc5cf",
+        "size_in_bytes": 207370
+      },
+      {
+        "_path": "site-packages/imgaug/augmenters/weather.py",
+        "path_type": "hardlink",
+        "sha256": "ee2ea10f15adba2b45d28a24aed9628e118623783c33d539bd8fcaf695802c0e",
+        "sha256_in_prefix": "ee2ea10f15adba2b45d28a24aed9628e118623783c33d539bd8fcaf695802c0e",
+        "size_in_bytes": 61749
+      },
+      {
+        "_path": "site-packages/imgaug/dtypes.py",
+        "path_type": "hardlink",
+        "sha256": "43d392e1e5f3b0c3cc59e2d399d4cb241e3f7527c4d2045647c9ec71c4a118f2",
+        "sha256_in_prefix": "43d392e1e5f3b0c3cc59e2d399d4cb241e3f7527c4d2045647c9ec71c4a118f2",
+        "size_in_bytes": 13696
+      },
+      {
+        "_path": "site-packages/imgaug/external/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/imgaug/external/opensimplex.py",
+        "path_type": "hardlink",
+        "sha256": "c430bcded0c8c70b5c7f398732d22915680bf49de8d1eb45999fde9074aba89a",
+        "sha256_in_prefix": "c430bcded0c8c70b5c7f398732d22915680bf49de8d1eb45999fde9074aba89a",
+        "size_in_bytes": 79631
+      },
+      {
+        "_path": "site-packages/imgaug/external/poly_point_isect_py2py3.py",
+        "path_type": "hardlink",
+        "sha256": "e0b59e719e55a5db995f98dfd64db31dd428177ccabe7f1204a5a6699afc879d",
+        "sha256_in_prefix": "e0b59e719e55a5db995f98dfd64db31dd428177ccabe7f1204a5a6699afc879d",
+        "size_in_bytes": 42628
+      },
+      {
+        "_path": "site-packages/imgaug/imgaug.py",
+        "path_type": "hardlink",
+        "sha256": "97d7974160ccae6e15a4f8303e3a906b35a77fde05e1aa194362f21a610b35b5",
+        "sha256_in_prefix": "97d7974160ccae6e15a4f8303e3a906b35a77fde05e1aa194362f21a610b35b5",
+        "size_in_bytes": 81936
+      },
+      {
+        "_path": "site-packages/imgaug/multicore.py",
+        "path_type": "hardlink",
+        "sha256": "3ea4d6b4eb6df208e2425978ff41c725283d64ea29eb4d4b3584c44daa290e73",
+        "sha256_in_prefix": "3ea4d6b4eb6df208e2425978ff41c725283d64ea29eb4d4b3584c44daa290e73",
+        "size_in_bytes": 32759
+      },
+      {
+        "_path": "site-packages/imgaug/parameters.py",
+        "path_type": "hardlink",
+        "sha256": "045916b25b26bdc57bf2f3cb81f665a2e68096418c1c615e5abb62a91ee6c4d3",
+        "sha256_in_prefix": "045916b25b26bdc57bf2f3cb81f665a2e68096418c1c615e5abb62a91ee6c4d3",
+        "size_in_bytes": 126996
+      },
+      {
+        "_path": "site-packages/imgaug/quokka.jpg",
+        "path_type": "hardlink",
+        "sha256": "bf1059d0f925e7d0c712cadf07a04ba4cfc98957d7be65d3a7d8ae0c464cd76e",
+        "sha256_in_prefix": "bf1059d0f925e7d0c712cadf07a04ba4cfc98957d7be65d3a7d8ae0c464cd76e",
+        "size_in_bytes": 74660
+      },
+      {
+        "_path": "site-packages/imgaug/quokka_annotations.json",
+        "path_type": "hardlink",
+        "sha256": "ac105c75c464fb5174d9a3f109a6440f8a3fdc6b52dfde4b7610c4ddc47471e1",
+        "sha256_in_prefix": "ac105c75c464fb5174d9a3f109a6440f8a3fdc6b52dfde4b7610c4ddc47471e1",
+        "size_in_bytes": 2064
+      },
+      {
+        "_path": "site-packages/imgaug/quokka_depth_map_halfres.png",
+        "path_type": "hardlink",
+        "sha256": "ee068f6bf8b67a91284de1ba27a1f2670e5b36fc7118e0ec67179c4b75bbac8c",
+        "sha256_in_prefix": "ee068f6bf8b67a91284de1ba27a1f2670e5b36fc7118e0ec67179c4b75bbac8c",
+        "size_in_bytes": 19070
+      },
+      {
+        "_path": "site-packages/imgaug/random.py",
+        "path_type": "hardlink",
+        "sha256": "8a74f61a75b2f568b0bb6c5150d4f3b0a787d8c0d92c83ac2158f17d419c4312",
+        "sha256_in_prefix": "8a74f61a75b2f568b0bb6c5150d4f3b0a787d8c0d92c83ac2158f17d419c4312",
+        "size_in_bytes": 53910
+      },
+      {
+        "_path": "site-packages/imgaug/testutils.py",
+        "path_type": "hardlink",
+        "sha256": "264357a9d67656c8272b90c4ff8ad12e29998d11abf04eabf035cb40aadc4e0d",
+        "sha256_in_prefix": "264357a9d67656c8272b90c4ff8ad12e29998d11abf04eabf035cb40aadc4e0d",
+        "size_in_bytes": 12035
+      },
+      {
+        "_path": "site-packages/imgaug/validation.py",
+        "path_type": "hardlink",
+        "sha256": "11dd30390a9af5d9938c5c48f8ee6d155214684506a76df21cb04bc079729413",
+        "sha256_in_prefix": "11dd30390a9af5d9938c5c48f8ee6d155214684506a76df21cb04bc079729413",
+        "size_in_bytes": 2508
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/__pycache__/__init__.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/__init__.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/base.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/batches.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/bbs.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/heatmaps.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/kps.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/lines.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/normalization.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/polys.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/segmaps.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmentables/__pycache__/utils.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/__init__.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/arithmetic.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/artistic.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/base.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/blend.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/blur.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/collections.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/color.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/contrast.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/convolutional.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/debug.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/edges.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/flip.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/geometric.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/imgcorruptlike.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/meta.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/overlay.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/pillike.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/pooling.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/segmentation.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/size.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/augmenters/__pycache__/weather.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/__pycache__/dtypes.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/external/__pycache__/__init__.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/external/__pycache__/opensimplex.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/external/__pycache__/poly_point_isect_py2py3.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/__pycache__/imgaug.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/__pycache__/multicore.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/__pycache__/parameters.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/__pycache__/random.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/__pycache__/testutils.cpython-38.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.8/site-packages/imgaug/__pycache__/validation.cpython-38.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "imgaug",
+  "sha256": "f020db2a3db115b9f558fb8e845cbdf3631488ae5e7aeb4a32fd71948100d46b",
+  "size": 853082,
+  "subdir": "noarch",
+  "timestamp": 1640909878000,
+  "url": "https://conda.anaconda.org/conda-forge/noarch/imgaug-0.4.0-pyhd8ed1ab_1.tar.bz2",
+  "version": "0.4.0"
+}

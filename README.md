@@ -1,1 +1,1 @@
-# text_letter_segmentation
+Created the project for text_segmentation
