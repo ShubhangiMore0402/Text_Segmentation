@@ -1,5 +1,6 @@
 import unittest
 import numpy as np
+import pytest
 from skimage._shared.testing import assert_equal
 from scipy.ndimage import binary_dilation, binary_erosion
 from skimage import data, feature
@@ -16,7 +17,7 @@ class TestCanny(unittest.TestCase):
     def test_00_01_zeros_mask(self):
         '''Test that the Canny filter finds no points in a masked image'''
         result = (feature.canny(np.random.uniform(size=(20, 20)), 4, 0, 0,
-                          np.zeros((20, 20), bool)))
+                                np.zeros((20, 20), bool)))
         self.assertFalse(np.any(result))
 
     def test_01_01_circle(self):
@@ -86,9 +87,13 @@ class TestCanny(unittest.TestCase):
              [False, False, False, False, False, False]])
 
         result = feature.canny(image, low_threshold=0.6, high_threshold=0.8,
-                         use_quantiles=True)
+                               use_quantiles=True)
 
         assert_equal(result, correct_output)
+
+    def test_img_all_ones(self):
+        image = np.ones((10, 10))
+        assert np.all(feature.canny(image) == 0)
 
     def test_invalid_use_quantiles(self):
         image = img_as_float(data.camera()[::50, ::50])
@@ -119,3 +124,30 @@ class TestCanny(unittest.TestCase):
         result_float = feature.canny(image_float)
 
         assert_equal(result_uint8, result_float)
+
+        low = 0.1
+        high = 0.2
+
+        assert_equal(feature.canny(image_float, 1.0, low, high),
+                     feature.canny(image_uint8, 1.0, 255 * low, 255 * high))
+
+    def test_full_mask_matches_no_mask(self):
+        """The masked and unmasked algorithms should return the same result.
+
+        """
+        image = data.camera()
+
+        for mode in ('constant', 'nearest', 'reflect'):
+            assert_equal(
+                feature.canny(image, mode=mode),
+                feature.canny(image, mode=mode, mask=np.ones_like(image, dtype=bool))
+        )
+
+    def test_unsupported_int64(self):
+        for dtype in (np.int64, np.uint64):
+            image = np.zeros((10, 10), dtype=dtype)
+            image[3, 3] = np.iinfo(dtype).max
+            with pytest.raises(
+                    ValueError, match="64-bit integer images are not supported"
+            ):
+                feature.canny(image)

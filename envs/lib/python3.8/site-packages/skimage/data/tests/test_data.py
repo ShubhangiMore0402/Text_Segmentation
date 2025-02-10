@@ -1,17 +1,10 @@
 import numpy as np
 import skimage.data as data
-from skimage.data import image_fetcher
+from skimage.data._fetchers import _image_fetcher
 from skimage import io
 from skimage._shared.testing import assert_equal, assert_almost_equal, fetch
 import os
 import pytest
-
-
-def test_data_dir():
-    # data_dir should be a directory people can use as a standard directory
-    # https://github.com/scikit-image/scikit-image/pull/3945#issuecomment-498141893
-    data_dir = data.data_dir
-    assert 'astronaut.png' in os.listdir(data_dir)
 
 
 def test_download_all_with_pooch():
@@ -24,12 +17,13 @@ def test_download_all_with_pooch():
     # tests require, especially in parallel testing
 
     # The second concern is that this test essentially uses
-    # alot of bandwidth, which is not fun for developers on
+    # a lot of bandwidth, which is not fun for developers on
     # lower speed connections.
     # https://github.com/scikit-image/scikit-image/pull/4666/files/26d5138b25b958da6e97ebf979e9bc36f32c3568#r422604863
     data_dir = data.data_dir
-    if image_fetcher is not None:
+    if _image_fetcher is not None:
         data.download_all()
+        assert 'astronaut.png' in os.listdir(data_dir)
         assert len(os.listdir(data_dir)) > 50
     else:
         with pytest.raises(ModuleNotFoundError):
@@ -198,3 +192,12 @@ def test_vortex():
     image0, image1 = data.vortex()
     for image in [image0, image1]:
         assert image.shape == (512, 512)
+
+
+@pytest.mark.parametrize(
+    'function_name', ['file_hash',]
+)
+def test_fetchers_are_public(function_name):
+    # Check that the following functions that are only used indirectly in the
+    # above tests are public.
+    assert hasattr(data, function_name)

@@ -1,0 +1,114 @@
+[
+    {
+        "x": 0,
+        "y": 193,
+        "width": 42,
+        "height": 25,
+        "text": "thin"
+    },
+    {
+        "x": 52,
+        "y": 193,
+        "width": 37,
+        "height": 25,
+        "text": "40"
+    },
+    {
+        "x": 95,
+        "y": 193,
+        "width": 52,
+        "height": 37,
+        "text": "days"
+    },
+    {
+        "x": 154,
+        "y": 193,
+        "width": 24,
+        "height": 37,
+        "text": "of"
+    },
+    {
+        "x": 179,
+        "y": 196,
+        "width": 76,
+        "height": 34,
+        "text": "receipt"
+    },
+    {
+        "x": 259,
+        "y": 193,
+        "width": 24,
+        "height": 37,
+        "text": "of"
+    },
+    {
+        "x": 283,
+        "y": 193,
+        "width": 34,
+        "height": 25,
+        "text": "the"
+    },
+    {
+        "x": 323,
+        "y": 193,
+        "width": 68,
+        "height": 25,
+        "text": "work."
+    },
+    {
+        "x": 402,
+        "y": 201,
+        "width": 6,
+        "height": 6,
+        "text": "+"
+    },
+    {
+        "x": 420,
+        "y": 193,
+        "width": 37,
+        "height": 25,
+        "text": "You"
+    },
+    {
+        "x": 464,
+        "y": 193,
+        "width": 81,
+        "height": 37,
+        "text": "comply"
+    },
+    {
+        "x": 552,
+        "y": 193,
+        "width": 52,
+        "height": 25,
+        "text": "uzith"
+    },
+    {
+        "x": 612,
+        "y": 193,
+        "width": 26,
+        "height": 25,
+        "text": "all"
+    },
+    {
+        "x": 643,
+        "y": 193,
+        "width": 60,
+        "height": 25,
+        "text": "other"
+    },
+    {
+        "x": 706,
+        "y": 196,
+        "width": 65,
+        "height": 22,
+        "text": "terms"
+    },
+    {
+        "x": 778,
+        "y": 193,
+        "width": 22,
+        "height": 37,
+        "text": "of"
+    }
+]

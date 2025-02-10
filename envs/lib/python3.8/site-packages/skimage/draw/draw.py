@@ -1,7 +1,7 @@
-import warnings
 import numpy as np
 
 from .._shared._geometry import polygon_clip
+from .._shared.version_requirements import require
 from ._draw import (_coords_inside_image, _line, _line_aa,
                     _polygon, _ellipse_perimeter,
                     _circle_perimeter, _circle_perimeter_aa,
@@ -143,43 +143,6 @@ def ellipse(r, c, r_radius, c_radius, shape=None, rotation=0.):
     return rr, cc
 
 
-def circle(r, c, radius, shape=None):
-    """Generate coordinates of pixels within circle.
-
-    Parameters
-    ----------
-    r, c : double
-        Center coordinate of disk.
-    radius : double
-        Radius of disk.
-    shape : tuple, optional
-        Image shape which is used to determine the maximum extent of output
-        pixel coordinates. This is useful for disks that exceed the image
-        size. If None, the full extent of the disk is used.  Must be at least
-        length 2. Only the first two values are used to determine the extent of
-        the input image.
-
-    Returns
-    -------
-    rr, cc : ndarray of int
-        Pixel coordinates of disk.
-        May be used to directly index into an array, e.g.
-        ``img[rr, cc] = 1``.
-
-    Warns
-    -----
-    Deprecated:
-        .. versionadded:: 0.17
-
-            This function is deprecated and will be removed in scikit-image 0.19.
-            Please use the function named ``disk`` instead.
-    """
-    warnings.warn("`draw.circle` is deprecated in favor of `draw.disk`."
-                  "`draw.circle` will be removed in version 0.19",
-                  FutureWarning, stacklevel=2)
-    return disk((r, c), radius, shape=shape)
-
-
 def disk(center, radius, *, shape=None):
     """Generate coordinates of pixels within circle.
 
@@ -190,11 +153,11 @@ def disk(center, radius, *, shape=None):
     radius : double
         Radius of disk.
     shape : tuple, optional
-        Image shape which is used to determine the maximum extent of output
-        pixel coordinates. This is useful for disks that exceed the image
-        size. If None, the full extent of the disk is used.  Must be at least
-        length 2. Only the first two values are used to determine the extent of
-        the input image.
+        Image shape as a tuple of size 2. Determines the maximum
+        extent of output pixel coordinates. This is useful for disks that
+        exceed the image size. If None, the full extent of the disk is used.
+        The  shape might result in negative coordinates and wraparound
+        behaviour.
 
     Returns
     -------
@@ -205,7 +168,26 @@ def disk(center, radius, *, shape=None):
 
     Examples
     --------
+    >>> import numpy as np
     >>> from skimage.draw import disk
+    >>> shape = (4, 4)
+    >>> img = np.zeros(shape, dtype=np.uint8)
+    >>> rr, cc = disk((0, 0), 2, shape=shape)
+    >>> img[rr, cc] = 1
+    >>> img
+    array([[1, 1, 0, 0],
+           [1, 1, 0, 0],
+           [0, 0, 0, 0],
+           [0, 0, 0, 0]], dtype=uint8)
+    >>> img = np.zeros(shape, dtype=np.uint8)
+    >>> # Negative coordinates in rr and cc perform a wraparound
+    >>> rr, cc = disk((0, 0), 2, shape=None)
+    >>> img[rr, cc] = 1
+    >>> img
+    array([[1, 1, 0, 1],
+           [1, 1, 0, 1],
+           [0, 0, 0, 0],
+           [1, 1, 0, 1]], dtype=uint8)
     >>> img = np.zeros((10, 10), dtype=np.uint8)
     >>> rr, cc = disk((4, 4), 5)
     >>> img[rr, cc] = 1
@@ -225,6 +207,7 @@ def disk(center, radius, *, shape=None):
     return ellipse(r, c, radius, radius, shape)
 
 
+@require("matplotlib", ">=3.3")
 def polygon_perimeter(r, c, shape=None, clip=False):
     """Generate polygon perimeter coordinates.
 
@@ -349,9 +332,8 @@ def set_color(image, coords, color, alpha=1):
     color = np.array(color, ndmin=1, copy=False)
 
     if image.shape[-1] != color.shape[-1]:
-        raise ValueError('Color shape ({}) must match last '
-                         'image dimension ({}).'.format(color.shape[0],
-                                                        image.shape[-1]))
+        raise ValueError(f'Color shape ({color.shape[0]}) must match last '
+                          'image dimension ({image.shape[-1]}).')
 
     if np.isscalar(alpha):
         # Can be replaced by ``full_like`` when numpy 1.8 becomes
@@ -453,14 +435,14 @@ def line_aa(r0, c0, r1, c1):
 
 
 def polygon(r, c, shape=None):
-    """Generate coordinates of pixels within polygon.
+    """Generate coordinates of pixels inside a polygon.
 
     Parameters
     ----------
-    r : (N,) ndarray
-        Row coordinates of vertices of polygon.
-    c : (N,) ndarray
-        Column coordinates of vertices of polygon.
+    r : (N,) array_like
+        Row coordinates of the polygon's vertices.
+    c : (N,) array_like
+        Column coordinates of the polygon's vertices.
     shape : tuple, optional
         Image shape which is used to determine the maximum extent of output
         pixel coordinates. This is useful for polygons that exceed the image
@@ -475,13 +457,23 @@ def polygon(r, c, shape=None):
         May be used to directly index into an array, e.g.
         ``img[rr, cc] = 1``.
 
+    See Also
+    --------
+    polygon2mask:
+        Create a binary mask from a polygon.
+
+    Notes
+    -----
+    This function ensures that `rr` and `cc` don't contain negative values.
+    Pixels of the polygon that whose coordinates are smaller 0, are not drawn.
+
     Examples
     --------
-    >>> from skimage.draw import polygon
-    >>> img = np.zeros((10, 10), dtype=np.uint8)
+    >>> import skimage as ski
     >>> r = np.array([1, 2, 8])
     >>> c = np.array([1, 7, 4])
-    >>> rr, cc = polygon(r, c)
+    >>> rr, cc = ski.draw.polygon(r, c)
+    >>> img = np.zeros((10, 10), dtype=int)
     >>> img[rr, cc] = 1
     >>> img
     array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -493,8 +485,29 @@ def polygon(r, c, shape=None):
            [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], dtype=uint8)
+           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
 
+    If the image `shape` is defined and vertices / points of the `polygon` are
+    outside this coordinate space, only a part (or none at all) of the polygon's
+    pixels is returned. Shifting the polygon's vertices by an offset can be used
+    to move the polygon around and potentially draw an arbitrary sub-region of
+    the polygon.
+
+    >>> offset = (2, -4)
+    >>> rr, cc = ski.draw.polygon(r - offset[0], c - offset[1], shape=img.shape)
+    >>> img = np.zeros((10, 10), dtype=int)
+    >>> img[rr, cc] = 1
+    >>> img
+    array([[0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+           [0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+           [0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
+           [0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
+           [0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+           [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
     """
     return _polygon(r, c, shape)
 
@@ -847,6 +860,7 @@ def rectangle(start, end=None, extent=None, shape=None):
     return coords
 
 
+@require("matplotlib", ">=3.3")
 def rectangle_perimeter(start, end=None, extent=None, shape=None, clip=False):
     """Generate coordinates of pixels that are exactly around a rectangle.
 
@@ -941,6 +955,9 @@ def _rectangle_slice(start, end=None, extent=None):
         end = np.asarray(start) + np.asarray(extent)
     top_left = np.minimum(start, end)
     bottom_right = np.maximum(start, end)
+
+    top_left = np.round(top_left).astype(int)
+    bottom_right = np.round(bottom_right).astype(int)
 
     if extent is None:
         bottom_right += 1

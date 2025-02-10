@@ -1,20 +1,20 @@
-import pytest
 import numpy as np
+import pytest
+from numpy.testing import assert_almost_equal, assert_equal
 
-from skimage._shared.testing import assert_equal, assert_almost_equal
-from skimage.feature import ORB
-from skimage._shared import testing
 from skimage import data
-from skimage._shared.testing import test_parallel, xfail, arch32
+from skimage._shared.testing import run_in_parallel, xfail, arch32
+from skimage.feature import ORB
 from skimage.util.dtype import _convert
 
 
 img = data.coins()
 
 
-@test_parallel()
-@pytest.mark.parametrize('dtype', ['float32', 'float64', 'uint8',
-                                   'uint16', 'int64'])
+@run_in_parallel()
+@pytest.mark.parametrize(
+    'dtype', ['float32', 'float64', 'uint8', 'uint16', 'int64']
+)
 def test_keypoints_orb_desired_no_of_keypoints(dtype):
     _img = _convert(img, dtype)
     detector_extractor = ORB(n_keypoints=10, fast_n=12, fast_threshold=0.20)
@@ -35,6 +35,15 @@ def test_keypoints_orb_desired_no_of_keypoints(dtype):
                              0.56637459, 0.52248355, 0.43696175, 0.42992376,
                              0.37700486, 0.36126832])
 
+    if np.dtype(dtype) == np.float32:
+        assert detector_extractor.scales.dtype == np.float32
+        assert detector_extractor.responses.dtype == np.float32
+        assert detector_extractor.orientations.dtype == np.float32
+    else:
+        assert detector_extractor.scales.dtype == np.float64
+        assert detector_extractor.responses.dtype == np.float64
+        assert detector_extractor.orientations.dtype == np.float64
+
     assert_almost_equal(exp_rows, detector_extractor.keypoints[:, 0])
     assert_almost_equal(exp_cols, detector_extractor.keypoints[:, 1])
     assert_almost_equal(exp_scales, detector_extractor.scales)
@@ -47,8 +56,9 @@ def test_keypoints_orb_desired_no_of_keypoints(dtype):
     assert_almost_equal(exp_cols, detector_extractor.keypoints[:, 1])
 
 
-@pytest.mark.parametrize('dtype', ['float32', 'float64', 'uint8',
-                                   'uint16', 'int64'])
+@pytest.mark.parametrize(
+    'dtype', ['float32', 'float64', 'uint8', 'uint16', 'int64']
+)
 def test_keypoints_orb_less_than_desired_no_of_keypoints(dtype):
     _img = _convert(img, dtype)
     detector_extractor = ORB(n_keypoints=15, fast_n=12,
@@ -127,5 +137,11 @@ def test_descriptor_orb():
 def test_no_descriptors_extracted_orb():
     img = np.ones((128, 128))
     detector_extractor = ORB()
-    with testing.raises(RuntimeError):
+    with pytest.raises(RuntimeError):
         detector_extractor.detect_and_extract(img)
+
+def test_img_too_small_orb():
+    img = data.brick()[:64,:64]
+    detector_extractor = ORB(downscale=2, n_scales=8)
+    detector_extractor.detect(img)
+    detector_extractor.detect_and_extract(img)

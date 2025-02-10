@@ -1,7 +1,7 @@
 """Convex Hull."""
 from itertools import product
 import numpy as np
-from scipy.spatial import ConvexHull
+from scipy.spatial import ConvexHull, QhullError
 from ..measure.pnpoly import grid_points_in_poly
 from ._convex_hull import possible_hull
 from ..measure._label import label
@@ -70,7 +70,8 @@ def _check_coords_in_hull(gridcoords, hull_equations, tolerance):
     return coords_in_hull
 
 
-def convex_hull_image(image, offset_coordinates=True, tolerance=1e-10):
+def convex_hull_image(image, offset_coordinates=True, tolerance=1e-10,
+                      include_borders=True):
     """Compute the convex hull image of a binary image.
 
     The convex hull is the set of pixels included in the smallest convex
@@ -88,6 +89,8 @@ def convex_hull_image(image, offset_coordinates=True, tolerance=1e-10):
         Tolerance when determining whether a point is inside the hull. Due
         to numerical floating point errors, a tolerance of 0 can result in
         some points erroneously being classified as being outside the hull.
+    include_borders: bool, optional
+        If ``False``, vertices/edges are excluded from the final hull mask.
 
     Returns
     -------
@@ -115,7 +118,13 @@ def convex_hull_image(image, offset_coordinates=True, tolerance=1e-10):
             # when offsetting, we multiply number of vertices by 2 * ndim.
             # therefore, we reduce the number of coordinates by using a
             # convex hull on the original set, before offsetting.
-            hull0 = ConvexHull(coords)
+            try:
+                hull0 = ConvexHull(coords)
+            except QhullError as err:
+                warn(f"Failed to get convex hull image. "
+                     f"Returning empty image, see error message below:\n"
+                     f"{err}")
+                return np.zeros(image.shape, dtype=bool)
             coords = hull0.points[hull0.vertices]
 
     # Add a vertex for the middle of each pixel edge
@@ -128,12 +137,21 @@ def convex_hull_image(image, offset_coordinates=True, tolerance=1e-10):
     coords = unique_rows(coords)
 
     # Find the convex hull
-    hull = ConvexHull(coords)
+    try:
+        hull = ConvexHull(coords)
+    except QhullError as err:
+        warn(f"Failed to get convex hull image. "
+             f"Returning empty image, see error message below:\n"
+             f"{err}")
+        return np.zeros(image.shape, dtype=bool)
     vertices = hull.points[hull.vertices]
 
     # If 2D, use fast Cython function to locate convex hull pixels
     if ndim == 2:
-        mask = grid_points_in_poly(image.shape, vertices)
+        labels = grid_points_in_poly(image.shape, vertices, binarize=False)
+        # If include_borders is True, we include vertices (2) and edge
+        # points (3) in the mask, otherwise only the inside of the hull (1)
+        mask = labels >= 1 if include_borders else labels == 1
     else:
         gridcoords = np.reshape(np.mgrid[tuple(map(slice, image.shape))],
                                 (ndim, -1))

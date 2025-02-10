@@ -7,7 +7,6 @@ from skimage.io.collection import MultiImage
 from skimage._shared import testing
 from skimage._shared.testing import assert_equal, assert_allclose
 
-import pytest
 from pytest import fixture
 
 @fixture
@@ -24,6 +23,7 @@ def imgs():
     yield imgs
 
     reset_plugins()
+
 
 def test_shapes(imgs):
     imgs = imgs[-1]

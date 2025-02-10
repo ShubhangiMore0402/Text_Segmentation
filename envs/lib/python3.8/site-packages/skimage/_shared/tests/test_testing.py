@@ -1,11 +1,9 @@
 """ Testing decorators module
 """
 
-import numpy as np
 from numpy.testing import assert_equal
-from skimage._shared.testing import doctest_skip_parser, test_parallel
+from skimage._shared.testing import doctest_skip_parser, run_in_parallel
 from skimage._shared import testing
-import pytest
 
 from skimage._shared._warnings import expected_warnings
 from warnings import warn
@@ -79,22 +77,22 @@ def test_skipper():
         doctest_skip_parser(c)
 
 
-def test_test_parallel():
+def test_run_in_parallel():
     state = []
 
-    @test_parallel()
+    @run_in_parallel()
     def change_state1():
         state.append(None)
     change_state1()
     assert len(state) == 2
 
-    @test_parallel(num_threads=1)
+    @run_in_parallel(num_threads=1)
     def change_state2():
         state.append(None)
     change_state2()
     assert len(state) == 3
 
-    @test_parallel(num_threads=3)
+    @run_in_parallel(num_threads=3)
     def change_state3():
         state.append(None)
     change_state3()
@@ -102,14 +100,14 @@ def test_test_parallel():
 
 
 def test_parallel_warning():
-    @test_parallel()
+    @run_in_parallel()
     def change_state_warns_fails():
         warn("Test warning for test parallel", stacklevel=2)
 
     with expected_warnings(['Test warning for test parallel']):
         change_state_warns_fails()
 
-    @test_parallel(warnings_matching=['Test warning for test parallel'])
+    @run_in_parallel(warnings_matching=['Test warning for test parallel'])
     def change_state_warns_passes():
         warn("Test warning for test parallel", stacklevel=2)
 
@@ -123,7 +121,3 @@ def test_expected_warnings_noop():
         # This should behave as a no-op
         with expected_warnings(None):
             warn('Expected warnings test')
-
-
-if __name__ == '__main__':
-    np.testing.run_module_suite()

@@ -1,4 +1,3 @@
-
 from itertools import chain
 from operator import add
 
@@ -6,9 +5,9 @@ import numpy as np
 
 from ._haar import haar_like_feature_coord_wrapper
 from ._haar import haar_like_feature_wrapper
+from .._shared.utils import deprecate_kwarg
 from ..color import gray2rgb
 from ..draw import rectangle
-from .._shared.utils import check_random_state
 from ..util import img_as_float
 
 FEATURE_TYPE = ('type-2-x', 'type-2-y',
@@ -28,8 +27,8 @@ def _validate_feature_type(feature_type):
         for feat_t in feature_type_:
             if feat_t not in FEATURE_TYPE:
                 raise ValueError(
-                    'The given feature type is unknown. Got {} instead of one'
-                    ' of {}.'.format(feat_t, FEATURE_TYPE))
+                                f'The given feature type is unknown. Got {feat_t} instead of one '
+                                f'of {FEATURE_TYPE}.')
     return feature_type_
 
 
@@ -154,9 +153,9 @@ def haar_like_feature(int_image, r, c, width, height, feature_type=None,
     >>> img_ii = integral_image(img)
     >>> feature = haar_like_feature(img_ii, 0, 0, 5, 5, 'type-3-x')
     >>> feature
-    array([-1, -2, -3, -4, -1, -2, -3, -4, -1, -2, -3, -4, -1, -2, -3, -4, -1,
-           -2, -3, -4, -1, -2, -3, -4, -1, -2, -3, -1, -2, -3, -1, -2, -3, -1,
-           -2, -1, -2, -1, -2, -1, -1, -1])
+    array([-1, -2, -3, -4, -5, -1, -2, -3, -4, -5, -1, -2, -3, -4, -5, -1, -2,
+           -3, -4, -1, -2, -3, -4, -1, -2, -3, -4, -1, -2, -3, -1, -2, -3, -1,
+           -2, -3, -1, -2, -1, -2, -1, -2, -1, -1, -1])
 
     You can compute the feature for some pre-computed coordinates.
 
@@ -173,8 +172,8 @@ def haar_like_feature(int_image, r, c, width, height, feature_type=None,
     >>> feature
     array([ 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
-            0,  0,  0,  0,  0,  0,  0,  0, -1, -3, -1, -3, -1, -3, -1, -3, -1,
-           -3, -1, -3, -1, -3, -2, -1, -3, -2, -2, -2, -1])
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, -1, -3, -5, -2, -4, -1,
+           -3, -5, -2, -4, -2, -4, -2, -4, -2, -1, -3, -2, -1, -1, -1, -1, -1])
 
     References
     ----------
@@ -219,11 +218,13 @@ def haar_like_feature(int_image, r, c, width, height, feature_type=None,
         return haar_feature
 
 
+@deprecate_kwarg({'random_state': 'rng'}, deprecated_version='0.21',
+                 removed_version='0.23')
 def draw_haar_like_feature(image, r, c, width, height,
                            feature_coord,
                            color_positive_block=(1., 0., 0.),
                            color_negative_block=(0., 1., 0.),
-                           alpha=0.5, max_n_features=None, random_state=None):
+                           alpha=0.5, max_n_features=None, rng=None):
     """Visualization of Haar-like features.
 
     Parameters
@@ -245,7 +246,7 @@ def draw_haar_like_feature(image, r, c, width, height,
         needs to be an array containing the type of each feature, as returned
         by :func:`haar_like_feature_coord`. By default, all coordinates are
         computed.
-    color_positive_rectangle : tuple of 3 floats
+    color_positive_block : tuple of 3 floats
         Floats specifying the color for the positive block. Corresponding
         values define (R, G, B) values. Default value is red (1, 0, 0).
     color_negative_block : tuple of 3 floats
@@ -257,12 +258,13 @@ def draw_haar_like_feature(image, r, c, width, height,
     max_n_features : int, default=None
         The maximum number of features to be returned.
         By default, all features are returned.
-    random_state : int, RandomState instance or None, optional
-        If int, random_state is the seed used by the random number generator;
-        If RandomState instance, random_state is the random number generator;
-        If None, the random number generator is the RandomState instance used
-        by `np.random`. The random state is used when generating a set of
-        features smaller than the total number of available features.
+    rng : {`numpy.random.Generator`, int}, optional
+        Pseudo-random number generator.
+        By default, a PCG64 generator is used (see :func:`numpy.random.default_rng`).
+        If `rng` is an int, it is used to seed the generator.
+
+        The rng is used when generating a set of features smaller than
+        the total number of available features.
 
     Returns
     -------
@@ -287,16 +289,16 @@ def draw_haar_like_feature(image, r, c, width, height,
             [0. , 0.5, 0. ]]])
 
     """
-    random_state = check_random_state(random_state)
+    rng = np.random.default_rng(rng)
     color_positive_block = np.asarray(color_positive_block, dtype=np.float64)
     color_negative_block = np.asarray(color_negative_block, dtype=np.float64)
 
     if max_n_features is None:
         feature_coord_ = feature_coord
     else:
-        feature_coord_ = random_state.choice(feature_coord,
-                                             size=max_n_features,
-                                             replace=False)
+        feature_coord_ = rng.choice(feature_coord,
+                                    size=max_n_features,
+                                    replace=False)
 
     output = np.copy(image)
     if len(image.shape) < 3:

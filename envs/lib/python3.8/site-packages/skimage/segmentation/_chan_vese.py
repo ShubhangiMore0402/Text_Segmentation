@@ -1,24 +1,26 @@
 import numpy as np
 from scipy.ndimage import distance_transform_edt as distance
 
-
-def _cv_curvature(phi):
-    """Returns the 'curvature' of a level set 'phi'.
-    """
-    P = np.pad(phi, 1, mode='edge')
-    fy = (P[2:, 1:-1] - P[:-2, 1:-1]) / 2.0
-    fx = (P[1:-1, 2:] - P[1:-1, :-2]) / 2.0
-    fyy = P[2:, 1:-1] + P[:-2, 1:-1] - 2*phi
-    fxx = P[1:-1, 2:] + P[1:-1, :-2] - 2*phi
-    fxy = .25 * (P[2:, 2:] + P[:-2, :-2] - P[:-2, 2:] - P[2:, :-2])
-    grad2 = fx**2 + fy**2
-    K = ((fxx*fy**2 - 2*fxy*fx*fy + fyy*fx**2) /
-         (grad2*np.sqrt(grad2) + 1e-8))
-    return K
+from .._shared.utils import _supported_float_type
 
 
 def _cv_calculate_variation(image, phi, mu, lambda1, lambda2, dt):
     """Returns the variation of level set 'phi' based on algorithm parameters.
+
+    This corresponds to equation (22) of the paper by Pascal Getreuer,
+    which computes the next iteration of the level set based on a current
+    level set.
+
+    A full explanation regarding all the terms is beyond the scope of the
+    present description, but there is one difference of particular import.
+    In the original algorithm, convergence is accelerated, and required
+    memory is reduced, by using a single array. This array, therefore, is a
+    combination of non-updated and updated values. If this were to be
+    implemented in python, this would require a double loop, where the
+    benefits of having fewer iterations would be outweided by massively
+    increasing the time required to perform each individual iteration. A
+    similar approach is used by Rami Cohen, and it is from there that the
+    C1-4 notation is taken.
     """
     eta = 1e-16
     P = np.pad(phi, 1, mode='edge')
@@ -93,12 +95,26 @@ def _cv_edge_length_term(phi, mu):
     """Returns the 'energy' contribution due to the length of the
     edge between regions at each point, multiplied by a factor 'mu'.
     """
-    toret = _cv_curvature(phi)
-    return mu * toret
+    P = np.pad(phi, 1, mode='edge')
+    fy = (P[2:, 1:-1] - P[:-2, 1:-1]) / 2.0
+    fx = (P[1:-1, 2:] - P[1:-1, :-2]) / 2.0
+    return mu * _cv_delta(phi) * np.sqrt(fx ** 2 + fy ** 2)
 
 
 def _cv_energy(image, phi, mu, lambda1, lambda2):
     """Returns the total 'energy' of the current level set function.
+
+    This corresponds to equation (7) of the paper by Pascal Getreuer,
+    which is the weighted sum of the following:
+    (A) the length of the contour produced by the zero values of the
+    level set,
+    (B) the area of the "foreground" (area of the image where the
+    level set is positive),
+    (C) the variance of the image inside the foreground,
+    (D) the variance of the image outside of the foreground
+
+    Each value is computed for each pixel, and then summed. The weight
+    of (B) is set to 0 in this implementation.
     """
     H = _cv_heavyside(phi)
     avgenergy = _cv_difference_from_average_term(image, H, lambda1, lambda2)
@@ -113,15 +129,18 @@ def _cv_reset_level_set(phi):
     return phi
 
 
-def _cv_checkerboard(image_size, square_size):
+def _cv_checkerboard(image_size, square_size, dtype=np.float64):
     """Generates a checkerboard level set function.
 
-    According to Pascal Getreuer, such a level set function has fast convergence.
+    According to Pascal Getreuer, such a level set function has fast
+    convergence.
     """
-    yv = np.arange(image_size[0]).reshape(image_size[0], 1)
-    xv = np.arange(image_size[1])
-    return (np.sin(np.pi/square_size*yv) *
-            np.sin(np.pi/square_size*xv))
+    yv = np.arange(image_size[0], dtype=dtype).reshape(image_size[0], 1)
+    xv = np.arange(image_size[1], dtype=dtype)
+    sf = np.pi / square_size
+    xv *= sf
+    yv *= sf
+    return np.sin(yv) * np.sin(xv)
 
 
 def _cv_large_disk(image_size):
@@ -134,7 +153,7 @@ def _cv_large_disk(image_size):
     centerX = int((image_size[1]-1) / 2)
     res[centerY, centerX] = 0.
     radius = float(min(centerX, centerY))
-    return (radius-distance(res)) / radius
+    return (radius - distance(res)) / radius
 
 
 def _cv_small_disk(image_size):
@@ -147,15 +166,15 @@ def _cv_small_disk(image_size):
     centerX = int((image_size[1]-1) / 2)
     res[centerY, centerX] = 0.
     radius = float(min(centerX, centerY)) / 2.0
-    return (radius-distance(res)) / (radius*3)
+    return (radius - distance(res)) / (radius * 3)
 
 
-def _cv_init_level_set(init_level_set, image_shape):
+def _cv_init_level_set(init_level_set, image_shape, dtype=np.float64):
     """Generates an initial level set function conditional on input arguments.
     """
     if type(init_level_set) == str:
         if init_level_set == 'checkerboard':
-            res = _cv_checkerboard(image_shape, 5)
+            res = _cv_checkerboard(image_shape, 5, dtype)
         elif init_level_set == 'disk':
             res = _cv_large_disk(image_shape)
         elif init_level_set == 'small disk':
@@ -164,11 +183,11 @@ def _cv_init_level_set(init_level_set, image_shape):
             raise ValueError("Incorrect name for starting level set preset.")
     else:
         res = init_level_set
-    return res
+    return res.astype(dtype, copy=False)
 
 
-def chan_vese(image, mu=0.25, lambda1=1.0, lambda2=1.0, tol=1e-3, max_iter=500,
-              dt=0.5, init_level_set='checkerboard',
+def chan_vese(image, mu=0.25, lambda1=1.0, lambda2=1.0, tol=1e-3,
+              max_num_iter=500, dt=0.5, init_level_set='checkerboard',
               extended_output=False):
     """Chan-Vese segmentation algorithm.
 
@@ -197,7 +216,7 @@ def chan_vese(image, mu=0.25, lambda1=1.0, lambda2=1.0, tol=1e-3, max_iter=500,
         iterations normalized by the area of the image is below this
         value, the algorithm will assume that the solution was
         reached.
-    max_iter : uint, optional
+    max_num_iter : uint, optional
         Maximum number of iterations allowed before the algorithm
         interrupts itself.
     dt : float, optional
@@ -297,12 +316,14 @@ def chan_vese(image, mu=0.25, lambda1=1.0, lambda2=1.0, tol=1e-3, max_iter=500,
     if len(image.shape) != 2:
         raise ValueError("Input image should be a 2D array.")
 
-    phi = _cv_init_level_set(init_level_set, image.shape)
+    float_dtype = _supported_float_type(image.dtype)
+    phi = _cv_init_level_set(init_level_set, image.shape, dtype=float_dtype)
 
     if type(phi) != np.ndarray or phi.shape != image.shape:
         raise ValueError("The dimensions of initial level set do not "
                          "match the dimensions of image.")
 
+    image = image.astype(float_dtype, copy=False)
     image = image - np.min(image)
     if np.max(image) != 0:
         image = image / np.max(image)
@@ -313,7 +334,7 @@ def chan_vese(image, mu=0.25, lambda1=1.0, lambda2=1.0, tol=1e-3, max_iter=500,
     phivar = tol + 1
     segmentation = phi > 0
 
-    while(phivar > tol and i < max_iter):
+    while(phivar > tol and i < max_num_iter):
         # Save old level set values
         oldphi = phi
 

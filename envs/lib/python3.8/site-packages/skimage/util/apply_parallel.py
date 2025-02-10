@@ -1,6 +1,5 @@
 import numpy
 
-
 __all__ = ['apply_parallel']
 
 
@@ -56,8 +55,8 @@ def _ensure_dask_array(array, chunks=None):
 
 
 def apply_parallel(function, array, chunks=None, depth=0, mode=None,
-                   extra_arguments=(), extra_keywords={}, *, dtype=None,
-                   multichannel=False, compute=None):
+                   extra_arguments=(), extra_keywords=None, *,
+                   dtype=None, compute=None, channel_axis=None):
     """Map a function in parallel across an array.
 
     Split an array into possibly overlapping chunks of a given depth and
@@ -78,12 +77,16 @@ def apply_parallel(function, array, chunks=None, depth=0, mode=None,
         is a sequence of chunk sizes along the corresponding dimension. If
         None, the array is broken up into chunks based on the number of
         available cpus. More information about chunks is in the documentation
-        `here <https://dask.pydata.org/en/latest/array-design.html>`_.
-    depth : int, optional
-        Integer equal to the depth of the added boundary cells. Defaults to
-        zero.
+        `here <https://dask.pydata.org/en/latest/array-design.html>`_. When
+        `channel_axis` is not None, the tuples can be length ``ndim - 1`` and
+        a single chunk will be used along the channel axis.
+    depth : int or sequence of int, optional
+        The depth of the added boundary cells. A tuple can be used to specify a
+        different depth per array axis. Defaults to zero. When `channel_axis`
+        is not None, and a tuple of length ``ndim - 1`` is provided, a depth of
+        0 will be used along the channel axis.
     mode : {'reflect', 'symmetric', 'periodic', 'wrap', 'nearest', 'edge'}, optional
-        type of external boundary padding.
+        Type of external boundary padding.
     extra_arguments : tuple, optional
         Tuple of arguments to be passed to the function.
     extra_keywords : dictionary, optional
@@ -97,21 +100,15 @@ def apply_parallel(function, array, chunks=None, depth=0, mode=None,
 
         .. versionadded:: 0.18
            ``dtype`` was added in 0.18.
-    multichannel : bool, optional
-        If `chunks` is None and `multichannel` is True, this function will keep
-        only a single chunk along the channels axis. When `depth` is specified
-        as a scalar value, that depth will be applied only to the non-channels
-        axes (a depth of 0 will be used along the channels axis). If the user
-        manually specified both `chunks` and a `depth` tuple, then this
-        argument will have no effect.
-
-        .. versionadded:: 0.18
-           ``multichannel`` was added in 0.18.
     compute : bool, optional
         If ``True``, compute eagerly returning a NumPy Array.
         If ``False``, compute lazily returning a Dask Array.
         If ``None`` (default), compute based on array type provided
         (eagerly for NumPy Arrays and lazily for Dask Arrays).
+    channel_axis : int or None, optional
+        If None, the image is assumed to be a grayscale (single channel) image.
+        Otherwise, this parameter indicates which axis of the array corresponds
+        to channels.
 
     Returns
     -------
@@ -137,8 +134,14 @@ def apply_parallel(function, array, chunks=None, depth=0, mode=None,
         raise RuntimeError("Could not import 'dask'.  Please install "
                            "using 'pip install dask'")
 
+    if extra_keywords is None:
+        extra_keywords = {}
+
     if compute is None:
         compute = not isinstance(array, da.Array)
+
+    if channel_axis is not None:
+        channel_axis = channel_axis % array.ndim
 
     if chunks is None:
         shape = array.shape
@@ -149,10 +152,19 @@ def apply_parallel(function, array, chunks=None, depth=0, mode=None,
             ncpu = cpu_count()
         except NotImplementedError:
             ncpu = 4
-        if multichannel:
-            chunks = _get_chunks(shape[:-1], ncpu) + (shape[-1],)
+        if channel_axis is not None:
+            # use a single chunk along the channel axis
+            spatial_shape = shape[:channel_axis] + shape[channel_axis + 1:]
+            chunks = list(_get_chunks(spatial_shape, ncpu))
+            chunks.insert(channel_axis, shape[channel_axis])
+            chunks = tuple(chunks)
         else:
             chunks = _get_chunks(shape, ncpu)
+    elif channel_axis is not None and len(chunks) == array.ndim - 1:
+        # insert a single chunk along the channel axis
+        chunks = list(chunks)
+        chunks.insert(channel_axis, array.shape[channel_axis])
+        chunks = tuple(chunks)
 
     if mode == 'wrap':
         mode = 'periodic'
@@ -160,10 +172,20 @@ def apply_parallel(function, array, chunks=None, depth=0, mode=None,
         mode = 'reflect'
     elif mode == 'edge':
         mode = 'nearest'
+    elif mode is None:
+        # default value for Dask.
+        # Note: that for dask >= 2022.03 it will change to 'none' so we set it
+        #       here for consistent behavior across Dask versions.
+        mode = 'reflect'
 
-    if multichannel and numpy.isscalar(depth):
-        # depth is only used along the non-channel axes
-        depth = (depth,) * (len(array.shape) - 1) + (0,)
+    if channel_axis is not None:
+        if numpy.isscalar(depth):
+            # depth is zero along channel_axis
+            depth = [depth] * (array.ndim - 1)
+        depth = list(depth)
+        if len(depth) == array.ndim - 1:
+            depth.insert(channel_axis, 0)
+        depth = tuple(depth)
 
     def wrapped_func(arr):
         return function(arr, *extra_arguments, **extra_keywords)

@@ -1,15 +1,15 @@
-import numpy as np
-from scipy.ndimage import gaussian_filter
+import copy
 
+import numpy as np
+
+from .._shared.filters import gaussian
+from .._shared.utils import check_nD, deprecate_kwarg
+from .brief_cy import _brief_loop
 from .util import (DescriptorExtractor, _mask_border_keypoints,
                    _prepare_grayscale_input_2D)
 
-from .brief_cy import _brief_loop
-from .._shared.utils import check_nD
-
 
 class BRIEF(DescriptorExtractor):
-
     """BRIEF binary descriptor extractor.
 
     BRIEF (Binary Robust Independent Elementary Features) is an efficient
@@ -34,12 +34,21 @@ class BRIEF(DescriptorExtractor):
     mode : {'normal', 'uniform'}, optional
         Probability distribution for sampling location of decision pixel-pairs
         around keypoints.
-    sample_seed : int, optional
-        Seed for the random sampling of the decision pixel-pairs. From a square
-        window with length `patch_size`, pixel pairs are sampled using the
-        `mode` parameter to build the descriptors using intensity comparison.
-        The value of `sample_seed` must be the same for the images to be
-        matched while building the descriptors.
+    rng : {`numpy.random.Generator`, int}, optional
+        Pseudo-random number generator (RNG).
+        By default, a PCG64 generator is used (see :func:`numpy.random.default_rng`).
+        If `rng` is an int, it is used to seed the generator.
+
+        The PRNG is used for the random sampling of the decision
+        pixel-pairs. From a square window with length `patch_size`,
+        pixel pairs are sampled using the `mode` parameter to build
+        the descriptors using intensity comparison.
+
+        For matching across images, the same `rng` should be used to construct
+        descriptors. To facilitate this:
+
+        (a) `rng` defaults to 1
+        (b) Subsequent calls of the ``extract`` method will use the same rng/seed.
     sigma : float, optional
         Standard deviation of the Gaussian low-pass filter applied to the image
         to alleviate noise sensitivity, which is strongly recommended to obtain
@@ -111,8 +120,10 @@ class BRIEF(DescriptorExtractor):
 
     """
 
+    @deprecate_kwarg({'sample_seed': 'rng'}, deprecated_version='0.21',
+                     removed_version='0.23')
     def __init__(self, descriptor_size=256, patch_size=49,
-                 mode='normal', sigma=1, sample_seed=1):
+                 mode='normal', sigma=1, rng=1):
 
         mode = mode.lower()
         if mode not in ('normal', 'uniform'):
@@ -122,7 +133,19 @@ class BRIEF(DescriptorExtractor):
         self.patch_size = patch_size
         self.mode = mode
         self.sigma = sigma
-        self.sample_seed = sample_seed
+
+        if isinstance(rng, np.random.Generator):
+            # Spawn an independent RNG from parent RNG provided by the user.
+            # This is necessary so that we can safely deepcopy the RNG.
+            # See https://github.com/scikit-learn/scikit-learn/issues/16988#issuecomment-1518037853
+            bg = rng._bit_generator
+            ss = bg._seed_seq
+            child_ss, = ss.spawn(1)
+            self.rng = np.random.Generator(type(bg)(child_ss))
+        elif rng is None:
+            self.rng = np.random.default_rng(np.random.SeedSequence())
+        else:
+            self.rng = np.random.default_rng(rng)
 
         self.descriptors = None
         self.mask = None
@@ -140,19 +163,21 @@ class BRIEF(DescriptorExtractor):
         """
         check_nD(image, 2)
 
-        random = np.random.RandomState()
-        random.seed(self.sample_seed)
+        # Copy RNG so we can repeatedly call extract with the same random values
+        rng = copy.deepcopy(self.rng)
 
         image = _prepare_grayscale_input_2D(image)
 
         # Gaussian low-pass filtering to alleviate noise sensitivity
-        image = np.ascontiguousarray(gaussian_filter(image, self.sigma))
+        image = np.ascontiguousarray(
+            gaussian(image, self.sigma, mode='reflect')
+        )
 
         # Sampling pairs of decision pixels in patch_size x patch_size window
         desc_size = self.descriptor_size
         patch_size = self.patch_size
         if self.mode == 'normal':
-            samples = (patch_size / 5.0) * random.randn(desc_size * 8)
+            samples = (patch_size / 5.0) * rng.standard_normal(desc_size * 8)
             samples = np.array(samples, dtype=np.int32)
             samples = samples[(samples < (patch_size // 2))
                               & (samples > - (patch_size - 2) // 2)]
@@ -160,9 +185,9 @@ class BRIEF(DescriptorExtractor):
             pos1 = samples[:desc_size * 2].reshape(desc_size, 2)
             pos2 = samples[desc_size * 2:desc_size * 4].reshape(desc_size, 2)
         elif self.mode == 'uniform':
-            samples = random.randint(-(patch_size - 2) // 2,
-                                     (patch_size // 2) + 1,
-                                     (desc_size * 2, 2))
+            samples = rng.integers(-(patch_size - 2) // 2,
+                                      (patch_size // 2) + 1,
+                                      (desc_size * 2, 2))
             samples = np.array(samples, dtype=np.int32)
             pos1, pos2 = np.split(samples, 2)
 
@@ -174,11 +199,10 @@ class BRIEF(DescriptorExtractor):
         self.mask = _mask_border_keypoints(image.shape, keypoints,
                                            patch_size // 2)
 
-        keypoints = np.array(keypoints[self.mask, :], dtype=np.intp,
+        keypoints = np.array(keypoints[self.mask, :], dtype=np.int64,
                              order='C', copy=False)
 
         self.descriptors = np.zeros((keypoints.shape[0], desc_size),
                                     dtype=bool, order='C')
 
-        _brief_loop(image, self.descriptors.view(np.uint8), keypoints,
-                    pos1, pos2)
+        _brief_loop(image, self.descriptors.view(np.uint8), keypoints, pos1, pos2)

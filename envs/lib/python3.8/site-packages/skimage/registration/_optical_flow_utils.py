@@ -1,10 +1,10 @@
-# coding: utf-8
 """Common tools to optical flow algorithms.
 
 """
 
 import numpy as np
 from scipy import ndimage as ndi
+
 from ..transform import pyramid_reduce
 from ..util.dtype import _convert
 
@@ -15,7 +15,7 @@ def get_warp_points(grid, flow):
     Parameters
     ----------
     grid : iterable
-        The sparse grid to be warped (optained using
+        The sparse grid to be warped (obtained using
         ``np.meshgrid(..., sparse=True)).``)
     flow : ndarray
         The warping motion field.
@@ -90,7 +90,7 @@ def get_pyramid(I, downscale=2.0, nlevel=10, min_size=16):
     count = 1
 
     while (count < nlevel) and (size > downscale * min_size):
-        J = pyramid_reduce(pyramid[-1], downscale, multichannel=False)
+        J = pyramid_reduce(pyramid[-1], downscale, channel_axis=None)
         pyramid.append(J)
         size = min(J.shape)
         count += 1
@@ -109,7 +109,7 @@ def coarse_to_fine(I0, I1, solver, downscale=2, nlevel=10, min_size=16,
     I1 : ndarray
         The second gray scale image of the sequence.
     solver : callable
-        The solver applyed at each pyramid level.
+        The solver applied at each pyramid level.
     downscale : float
         The pyramid downscale factor.
     nlevel : int

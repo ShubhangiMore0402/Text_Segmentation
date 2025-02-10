@@ -1,7 +1,6 @@
 __all__ = ['imread', 'imread_collection']
 
 import skimage.io as io
-from warnings import warn
 
 try:
     from astropy.io import fits
@@ -24,7 +23,7 @@ def imread(fname):
     -------
     img_array : ndarray
         Unlike plugins such as PIL, where different color bands/channels are
-        stored in the third dimension, FITS images are greyscale-only and can
+        stored in the third dimension, FITS images are grayscale-only and can
         be N-dimensional, so an array of the native FITS dimensionality is
         returned, without color channels.
 
@@ -38,18 +37,16 @@ def imread(fname):
 
     """
 
-    hdulist = fits.open(fname)
-
-    # Iterate over FITS image extensions, ignoring any other extension types
-    # such as binary tables, and get the first image data array:
-    img_array = None
-    for hdu in hdulist:
-        if isinstance(hdu, fits.ImageHDU) or \
-           isinstance(hdu, fits.PrimaryHDU):
-            if hdu.data is not None:
-                img_array = hdu.data
-                break
-    hdulist.close()
+    with fits.open(fname) as hdulist:
+        # Iterate over FITS image extensions, ignoring any other extension types
+        # such as binary tables, and get the first image data array:
+        img_array = None
+        for hdu in hdulist:
+            if isinstance(hdu, fits.ImageHDU) or \
+               isinstance(hdu, fits.PrimaryHDU):
+                if hdu.data is not None:
+                    img_array = hdu.data
+                    break
 
     return img_array
 
@@ -62,7 +59,7 @@ def imread_collection(load_pattern, conserve_memory=True):
     load_pattern : str or list
         List of extensions to load. Filename globbing is currently
         unsupported.
-    converve_memory : bool
+    conserve_memory : bool
         If True, never keep more than one in memory at a specific
         time. Otherwise, images will be cached once they are loaded.
 
@@ -85,19 +82,18 @@ def imread_collection(load_pattern, conserve_memory=True):
     # files and finding the image extensions in each one:
     ext_list = []
     for filename in load_pattern:
-        hdulist = fits.open(filename)
-        for n, hdu in zip(range(len(hdulist)), hdulist):
-            if isinstance(hdu, fits.ImageHDU) or \
-               isinstance(hdu, fits.PrimaryHDU):
-                # Ignore (primary) header units with no data (use '.size'
-                # rather than '.data' to avoid actually loading the image):
-                try:
-                    data_size = hdu.size  # size is int in Astropy 3.1.2
-                except TypeError:
-                    data_size = hdu.size()
-                if data_size > 0:
-                    ext_list.append((filename, n))
-        hdulist.close()
+        with fits.open(filename) as hdulist:
+            for n, hdu in zip(range(len(hdulist)), hdulist):
+                if isinstance(hdu, fits.ImageHDU) or \
+                   isinstance(hdu, fits.PrimaryHDU):
+                    # Ignore (primary) header units with no data (use '.size'
+                    # rather than '.data' to avoid actually loading the image):
+                    try:
+                        data_size = hdu.size  # size is int in Astropy 3.1.2
+                    except TypeError:
+                        data_size = hdu.size()
+                    if data_size > 0:
+                        ext_list.append((filename, n))
 
     return io.ImageCollection(ext_list, load_func=FITSFactory,
                               conserve_memory=conserve_memory)
@@ -130,14 +126,12 @@ def FITSFactory(image_ext):
     if type(filename) is not str or type(extnum) is not int:
         raise ValueError("Expected a (filename, extension) tuple")
 
-    hdulist = fits.open(filename)
-
-    data = hdulist[extnum].data
-
-    hdulist.close()
+    with fits.open(filename) as hdulist:
+        data = hdulist[extnum].data
 
     if data is None:
         raise RuntimeError(
-            "Extension %d of %s has no data" % (extnum, filename))
+            f"Extension {extnum} of {filename} has no data"
+        )
 
     return data

@@ -2,7 +2,7 @@ import numpy as np
 from skimage._shared.testing import assert_array_equal
 from skimage.data import moon
 from skimage.feature import CENSURE
-from skimage._shared.testing import test_parallel
+from skimage._shared.testing import run_in_parallel
 from skimage._shared import testing
 from skimage.transform import rescale
 
@@ -15,8 +15,8 @@ def test_censure_on_rectangular_images():
     """Censure feature detector should work on 2D image of any shape."""
     rect_image = np.random.rand(300, 200)
     square_image = np.random.rand(200, 200)
-    CENSURE().detect((square_image))
-    CENSURE().detect((rect_image))
+    CENSURE().detect(square_image)
+    CENSURE().detect(rect_image)
 
 
 def test_keypoints_censure_color_image_unsupported_error():
@@ -59,7 +59,7 @@ def test_keypoints_censure_moon_image_dob():
     assert_array_equal(expected_scales, detector.scales)
 
 
-@test_parallel()
+@run_in_parallel()
 def test_keypoints_censure_moon_image_octagon():
     """Verify the actual Censure keypoints and their corresponding scale with
     the expected values for Octagon filter."""
@@ -67,7 +67,6 @@ def test_keypoints_censure_moon_image_octagon():
     detector = CENSURE(mode='octagon')
     # quarter scale image for speed
     detector.detect(rescale(img, 0.25,
-                            multichannel=False,
                             anti_aliasing=False,
                             mode='constant'))
     expected_keypoints = np.array([[ 23,  27],
@@ -88,7 +87,6 @@ def test_keypoints_censure_moon_image_star():
     detector = CENSURE(mode='star')
     # quarter scale image for speed
     detector.detect(rescale(img, 0.25,
-                            multichannel=False,
                             anti_aliasing=False,
                             mode='constant'))
     expected_keypoints = np.array([[ 23,  27],

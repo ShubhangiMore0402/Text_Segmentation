@@ -3,12 +3,12 @@ from skimage import data
 from skimage.segmentation import felzenszwalb
 
 from skimage._shared import testing
-from skimage._shared.testing import (assert_greater, test_parallel,
+from skimage._shared.testing import (assert_greater, run_in_parallel,
                                      assert_equal, assert_array_equal,
                                      assert_warns, assert_no_warnings)
 
 
-@test_parallel()
+@run_in_parallel()
 def test_grey():
     # very weak tests.
     img = np.zeros((20, 21))
@@ -41,19 +41,22 @@ def test_minsize():
         assert_greater(counts.min() + 1, min_size)
 
 
-def test_3D():
+@testing.parametrize('channel_axis', [0, -1])
+def test_3D(channel_axis):
     grey_img = np.zeros((10, 10))
     rgb_img = np.zeros((10, 10, 3))
     three_d_img = np.zeros((10, 10, 10))
+
+    rgb_img = np.moveaxis(rgb_img, -1, channel_axis)
     with assert_no_warnings():
-        felzenszwalb(grey_img, multichannel=True)
-        felzenszwalb(grey_img, multichannel=False)
-        felzenszwalb(rgb_img, multichannel=True)
+        felzenszwalb(grey_img, channel_axis=-1)
+        felzenszwalb(grey_img, channel_axis=None)
+        felzenszwalb(rgb_img, channel_axis=channel_axis)
     with assert_warns(RuntimeWarning):
-        felzenszwalb(three_d_img, multichannel=True)
+        felzenszwalb(three_d_img, channel_axis=channel_axis)
     with testing.raises(ValueError):
-        felzenszwalb(rgb_img, multichannel=False)
-        felzenszwalb(three_d_img, multichannel=False)
+        felzenszwalb(rgb_img, channel_axis=None)
+        felzenszwalb(three_d_img, channel_axis=None)
 
 
 def test_color():

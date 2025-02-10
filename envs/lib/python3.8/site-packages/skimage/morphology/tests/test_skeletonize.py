@@ -1,14 +1,14 @@
 import numpy as np
-from skimage.morphology import skeletonize, medial_axis, thin
-from skimage.morphology._skeletonize import (_generate_thin_luts,
-                                             G123_LUT, G123P_LUT)
-from skimage import draw
+import pytest
+from numpy.testing import assert_array_equal
 from scipy.ndimage import correlate
-from skimage.io import imread
-from skimage import data
 
-from skimage._shared import testing
-from skimage._shared.testing import assert_array_equal, fetch
+from skimage import draw
+from skimage._shared.testing import expected_warnings, fetch
+from skimage.io import imread
+from skimage.morphology import medial_axis, skeletonize, thin
+from skimage.morphology._skeletonize import (G123_LUT, G123P_LUT,
+                                             _generate_thin_luts)
 
 
 class TestSkeletonize():
@@ -18,27 +18,19 @@ class TestSkeletonize():
         assert_array_equal(result, np.zeros((5, 5)))
 
     def test_skeletonize_wrong_dim1(self):
-        im = np.zeros((5))
-        with testing.raises(ValueError):
+        im = np.zeros(5)
+        with pytest.raises(ValueError):
             skeletonize(im)
 
     def test_skeletonize_wrong_dim2(self):
         im = np.zeros((5, 5, 5))
-        with testing.raises(ValueError):
+        with pytest.raises(ValueError):
             skeletonize(im, method='zhang')
 
-    def test_skeletonize_not_binary(self):
-        im = np.zeros((5, 5))
-        im[0, 0] = 1
-        im[0, 1] = 2
-        with testing.raises(ValueError):
-            skeletonize(im)
-
-    def test_skeletonize_unexpected_value(self):
-        im = np.zeros((5, 5))
-        im[0, 0] = 2
-        with testing.raises(ValueError):
-            skeletonize(im)
+    def test_skeletonize_wrong_method(self):
+        im=np.ones((5,5))
+        with pytest.raises(ValueError):
+            skeletonize(im, method='foo')
 
     def test_skeletonize_all_foreground(self):
         im = np.ones((3, 4))
@@ -68,7 +60,7 @@ class TestSkeletonize():
         expected = np.load(fetch("data/bw_text_skeleton.npy"))
         assert_array_equal(result, expected)
 
-    def test_skeletonize_num_neighbours(self):
+    def test_skeletonize_num_neighbors(self):
         # an empty image
         image = np.zeros((300, 300))
 
@@ -157,8 +149,8 @@ class TestThin():
         assert_array_equal(result, expected)
 
     def test_baddim(self):
-        for ii in [np.zeros((3)), np.zeros((3, 3, 3))]:
-            with testing.raises(ValueError):
+        for ii in [np.zeros(3), np.zeros((3, 3, 3))]:
+            with pytest.raises(ValueError):
                 thin(ii)
 
     def test_lut_generation(self):
@@ -240,3 +232,8 @@ class TestMedialAxis():
         image[:, 1:-1] = True
         result = medial_axis(image)
         assert np.all(result == image)
+
+    def test_deprecated_random_state(self):
+        """Test medial_axis on an array of all zeros."""
+        with expected_warnings(['`random_state` is a deprecated argument']):
+            medial_axis(np.zeros((10, 10), bool), random_state=None)
