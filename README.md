@@ -48,22 +48,16 @@ The project is divided into the following phases:
    - Refine masks using template matching.
 
 3. **Train the Model**:
-   - Use the scripts in `models/` to train a segmentation network (e.g., U-Net, SwinTransformer).
+   - Use the scripts in `models/` to train a segmentation network (e.g., U-Net).
 
 4. **Evaluate on Real Data**:
    - Preprocess real handwriting samples and run predictions using the trained model.
 
 ## Tools and Technologies
 
-- **Libraries**: PIL, OpenCV, ImgAug, PyTorch/TensorFlow.
-- **Models**: U-Net, SwinTransformer, SwinUNet.
+- **Libraries**: PIL, OpenCV, ImgAug, PyTorch.
+- **Models**: U-Net.
 - **Annotation Tools**: LabelIng (for manual mask validation).
-
-## Additional Features
-
-- Hybrid segmentation and classification strategies.
-- Generative Adversarial Networks (GANs) for realistic synthetic data.
-- Bidirectional LSTM layers for sequence modeling.
 
 ## Contributing
 
