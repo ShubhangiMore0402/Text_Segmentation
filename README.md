@@ -16,7 +16,7 @@ The project is divided into the following phases:
    - Refine masks using template matching for precise character localization.
 
 3. **Model Training**:
-   - Train a segmentation model (e.g., U-Net, SwinTransformer) on the synthetic dataset.
+   - Train a segmentation model (e.g., U-Net) on the synthetic dataset.
    - Use metrics like Intersection over Union (IoU) and Dice Score to evaluate performance.
 
 4. **Evaluation on Real Data**:
